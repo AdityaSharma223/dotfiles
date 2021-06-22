@@ -189,7 +189,8 @@ set nospell                     " Disable by default but ive enabled it
 " personal keybindings 
 map <leader>w :w<cr> 
 map <leader>r :!python3 a.py
-
+map <leader>n :new<cr> 
+map <leader>nv :vnew<cr>
 " Disable arrows
 noremap <Up> <Nop>
 noremap <Down> <Nop>
