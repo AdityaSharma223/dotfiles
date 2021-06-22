@@ -16,7 +16,7 @@ filetype on
 filetype plugin on
 filetype indent on
 
-" automatically update when a file is changed outside
+" AUTOMATICALLY UPDATE WHEN A FILE IS CHANGED OUTSIDE
 set autoread
 
 " vimdiff option to ignore whitespace comparison
@@ -26,8 +26,7 @@ set diffexpr=""
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" enables mouse 'all'
-set mouse=a         
+
 " keep the cursor away from top/bottom
 set scrolloff=4
 
@@ -107,7 +106,8 @@ syntax enable
 set t_Co=256
 
 " dark color scheme
-colorscheme molokai
+colorscheme miramare
+
 set background=dark
 
 " set UTF-8 encoding
@@ -181,13 +181,14 @@ set comments=sl:/*,mb:\ *,elx:\ */
 " Spell checking
 set spelllang=en_us             " English as default language
 set complete+=kspell            " Word completion
-set nospell                     " Disable by default
+set nospell                     " Disable by default but ive enabled it
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General Key mappings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " personal keybindings 
 map <leader>w :w<cr> 
+map <leader>r :!python3 a.py
 
 " Disable arrows
 noremap <Up> <Nop>
