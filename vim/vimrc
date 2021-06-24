@@ -9,7 +9,7 @@ let mapleader=","
 set nocompatible
 
 " Change shell
-set shell=bash
+set shell=zsh
 
 " Enable filetype plugins
 filetype on                 
@@ -106,9 +106,8 @@ syntax enable
 set t_Co=256
 
 " dark color scheme
-colorscheme miramare
+colorscheme gruv
 
-set background=dark
 
 " set UTF-8 encoding
 set enc=utf-8
@@ -191,6 +190,9 @@ map <leader>w :w<cr>
 map <leader>r :!python3 a.py
 map <leader>n :new<cr> 
 map <leader>nv :vnew<cr>
+map <leader>rc :!g++ a.cpp && ./a.out
+map <leader>c :!xclip -sel c 
+
 " Disable arrows
 noremap <Up> <Nop>
 noremap <Down> <Nop>
