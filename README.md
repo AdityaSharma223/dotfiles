@@ -4,3 +4,5 @@
 
 ### note
 the bashrc is completely stock and has not been modified by me yet. (because I don't use the default terminal)
+
+hi my name is aditya sharma and i am the best person in this world :) 
