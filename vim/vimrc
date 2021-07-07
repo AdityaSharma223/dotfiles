@@ -8,6 +8,9 @@ let mapleader=","
 " Use vim settings, rather then vi settings 
 set nocompatible
 
+" enable mouse
+set mouse=a
+
 " Change shell
 set shell=zsh
 
@@ -16,6 +19,9 @@ filetype on
 filetype plugin on
 filetype indent on
 
+" allow folding 
+set foldenable 
+
 " AUTOMATICALLY UPDATE WHEN A FILE IS CHANGED OUTSIDE
 set autoread
 
@@ -23,6 +29,32 @@ set autoread
 set diffopt+=iwhite
 set diffexpr=""
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Plugins
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+call plug#begin('~/.vim/plugged')
+
+Plug 'vim-airline/vim-airline' 
+Plug 'vim-airline/vim-airline-themes'
+
+call plug#end() 
+
+let g:airline_powerline_fonts = 1 
+let g:airline_theme = 'badwolf'
+
+
+let g:airline#extensions#tabline#enabled = 1           
+let g:airline#extensions#tabline#show_close_button = 0 
+let g:airline#extensions#tabline#tabs_label = ''       
+let g:airline#extensions#tabline#buffers_label = ''    
+let g:airline#extensions#tabline#fnamemod = ':t'       
+let g:airline#extensions#tabline#show_tab_count = 0    
+let g:airline#extensions#tabline#show_buffers = 0      
+let g:airline#extensions#tabline#tab_min_count = 3     
+let g:airline#extensions#tabline#show_splits = 0       
+let g:airline#extensions#tabline#show_tab_nr = 0       
+let g:airline#extensions#tabline#show_tab_type = 0     
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -106,8 +138,9 @@ syntax enable
 set t_Co=256
 
 " dark color scheme
-colorscheme gruv
+colorscheme jellybeans
 
+set background=dark
 
 " set UTF-8 encoding
 set enc=utf-8
@@ -274,4 +307,6 @@ nnoremap <silent> <F9> :TagbarToggle<CR>
 nnoremap <silent> <F10> :call asyncrun#quickfix_toggle(6)<cr>
 " Async make
 nnoremap <silent> <F12> :AsyncRun make<cr>
+
+
 
