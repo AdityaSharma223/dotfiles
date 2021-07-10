@@ -21,9 +21,15 @@ set diffexpr=""
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'vim-airline/vim-airline' 
-Plug 'vim-airline/vim-airline-themes'
+    Plug 'vim-airline/vim-airline' 
+    Plug 'vim-airline/vim-airline-themes'
 
+    " syntax
+    Plug 'tpope/vim-markdown'
+    Plug 'ap/vim-css-color' " displays colors in css file 
+    
+    " colorschemes 
+    Plug 'morhetz/gruvbox'
 call plug#end() 
 
 let g:airline_powerline_fonts = 1 
@@ -123,10 +129,10 @@ syntax enable
 set t_Co=256
 
 " dark color scheme
-colorscheme jellybeans
+colorscheme gruvbox
 
 set background=dark
-
+set termguicolors
 " set UTF-8 encoding
 set enc=utf-8
 set fenc=utf-8
@@ -151,7 +157,7 @@ set history=1000
 set undofile   
 " maximum number of changes that can be undone
 set undolevels=1000
- "maximum number lines to save for undo on a buffer reload
+"maximum number lines to save for undo on a buffer reload
 set undoreload=10000
 " undo directory
 set undodir=~/.vim/.undo,~tmp,/tmp
@@ -292,7 +298,6 @@ nnoremap <silent> <F9> :TagbarToggle<CR>
 nnoremap <silent> <F10> :call asyncrun#quickfix_toggle(6)<cr>
 " Async make
 nnoremap <silent> <F12> :AsyncRun make<cr>
-
 
 
 
