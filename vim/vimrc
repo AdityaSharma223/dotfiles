@@ -18,8 +18,7 @@ set diffexpr=""
 
 
 call plug#begin('~/.vim/plugged')
-    Plug 'vim-airline/vim-airline' 
-    Plug 'vim-airline/vim-airline-themes'
+    Plug 'itchyny/lightline.vim'
     " syntax
     Plug 'tpope/vim-markdown'
     Plug 'ap/vim-css-color' " displays colors in css file 
@@ -27,14 +26,19 @@ call plug#begin('~/.vim/plugged')
     Plug 'morhetz/gruvbox'
 call plug#end() 
 
-let g:airline_powerline_fonts = 1 
-let g:airline_theme = 'badwolf'
+let g:lightline = {
+      \ 'colorscheme': 'powerline',
+      \ }
+let g:netrw_banner = 0 " removes the help from the :Lex command 
+
+
+""let g:airline_powerline_fonts = 1 
+"let g:airline_theme = 'badwolf'
 
 set scrolloff=4
 set wildmenu
 set wildmode=longest:full
 set wildignore+=*/tmp/*,*/.cache/*,*/.git/*,*.so,*~,*.pyc,*.bak,*.class,*.swp,*.zip,*.pdf 
-set wildignore+=*\\tmp\\*,*.exe  " Windows
 
 set laststatus=2
 set number
@@ -44,6 +48,8 @@ set so=7
 set ruler
 set cmdheight=1
 set hid
+set noshowmode
+set colorcolumn=80
 
 set backspace=eol,start,indent
 set whichwrap+=<,>,h,l
@@ -63,7 +69,7 @@ set novisualbell
 set t_vb=
 set tm=500
 
-set linespace=1
+set linespace=0
 
 set secure
 
@@ -120,6 +126,7 @@ map <leader>n :new<cr>
 map <leader>nv :vnew<cr>
 map <leader>rc :!g++ a.cpp && ./a.out
 map <leader>c :!xclip -sel c 
+map <leader>l :Lex<bar> :vertical resize 30<CR>
 
 noremap <Up> <Nop>
 noremap <Down> <Nop>
@@ -154,5 +161,7 @@ nnoremap <silent> <leader>sv :so $MYVIMRC<CR>
 
 nnoremap <leader><leader>v :vertical terminal<CR>
 nnoremap <leader><leader>s :terminal<CR>
+
+
 
 
