@@ -26,6 +26,8 @@ call plug#begin('~/.vim/plugged')
    
     " colorschemes 
     Plug 'morhetz/gruvbox'
+
+
 call plug#end() 
 
 let g:netrw_banner = 0 " removes the help from the :Lex command 
@@ -45,7 +47,6 @@ set ruler
 set cmdheight=1
 set hid
 set noshowmode
-set colorcolumn=80
 
 set backspace=eol,start,indent
 set whichwrap+=<,>,h,l
@@ -74,6 +75,7 @@ set t_Co=256
 colorscheme gruvbox
 set background=dark
 set termguicolors
+set cursorline
 
 set enc=utf-8
 set fenc=utf-8
@@ -151,5 +153,6 @@ nnoremap <leader><leader>v :vertical terminal<CR>
 nnoremap <leader><leader>s :terminal<CR>
 
 
-
+hi! Normal ctermbg=NONE guibg=NONE 
+hi! NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE 
 

@@ -15,38 +15,71 @@ scrolling:
   multiplier: 3
   auto_scroll: true
 
+# Colors (Gruvbox dark)
 colors:
   primary:
-    background: '#000000'
-    foreground: '#ffffff'
+    # hard contrast background - '#1d2021'
+    background:        &gruvbox_dark_bg '#282828'
+    # soft contrast background - '#32302f'
+    foreground:        '#ebdbb2'
+    bright_foreground: '#fbf1c7'
+    dim_foreground:    '#a89984'
   cursor:
-    text: '#000000'
-    cursor: '#ffffff'
-  normal:
-    black:   '0xffffff'
-    red:     '0xc82829'
-    green:   '0x718c00'
-    yellow:  '0xeab700'
-    blue:    '0x4271ae'
-    magenta: '0x8959a8'
-    cyan:    '0x3e999f'
-    white:   '0x4d4d4c'
+    text:   CellBackground
+    cursor: CellForeground
+  vi_mode_cursor:
+    text:   CellBackground
+    cursor: CellForeground
+  # search:
+  #   matches:
+  #     foreground: '#000000'
+  #     background: '#ffffff'
+  #   focused_match:
+  #    foreground: CellBackground
+  #    background: CellForeground
+  #   bar:
+  #     background: ''
+  #     foreground: ''
+  # line_indicator:
+  #   foreground: None
+  #   background: None
+  selection:
+    text:       CellBackground
+    background: CellForeground
   bright:
-    black:   '0x8e908c'
-    red:     '0xf5871f'
-    green:   '0xe0e0e0'
-    yellow:  '0xd6d6d6'
-    blue:    '0x969896'
-    magenta: '0x282a2e'
-    cyan:    '0xa3685a'
-    white:   '0x1d1f21'
-
+    black:   '#928374'
+    red:     '#fb4934'
+    green:   '#b8bb26'
+    yellow:  '#fabd2f'
+    blue:    '#83a598'
+    magenta: '#d3869b'
+    cyan:    '#8ec07c'
+    white:   '#ebdbb2'
+  normal:
+    black:   *gruvbox_dark_bg
+    red:     '#cc241d'
+    green:   '#98971a'
+    yellow:  '#d79921'
+    blue:    '#458588'
+    magenta: '#b16286'
+    cyan:    '#689d6a'
+    white:   '#a89984'
+  dim:
+    black:   '#32302f'
+    red:     '#9d0006'
+    green:   '#79740e'
+    yellow:  '#b57614'
+    blue:    '#076678'
+    magenta: '#8f3f71'
+    cyan:    '#427b58'
+    white:   '#928374'
+  # indexed_colors: []
 bell:
   animation: EaseOutExpo
   color: '0xffffff'
   duration: 0
 
-background_opacity: 0.90
+background_opacity: 0.95
 
 mouse:
   double_click: { threshold: 300 }
@@ -72,6 +105,19 @@ cursor:
 live_config_reload: true
 
 font: 
+    normal: 
+        family: monospace
+        style: Regular
+    bold: 
+        family: monospace
+        style: Bold
+    italic: 
+        family: monospace
+        style: Italic
+
     size: 13
 
+# Keybindings 
+key_bindings:
+    - { key: N,        mods: Control|Shift,    action: SpawnNewInstance    }
 
