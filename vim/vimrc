@@ -19,21 +19,17 @@ set diffexpr=""
 
 call plug#begin('~/.vim/plugged')
     Plug 'itchyny/lightline.vim'
+
     " syntax
     Plug 'tpope/vim-markdown'
     Plug 'ap/vim-css-color' " displays colors in css file 
+   
     " colorschemes 
     Plug 'morhetz/gruvbox'
 call plug#end() 
 
-let g:lightline = {
-      \ 'colorscheme': 'powerline',
-      \ }
 let g:netrw_banner = 0 " removes the help from the :Lex command 
 
-
-""let g:airline_powerline_fonts = 1 
-"let g:airline_theme = 'badwolf'
 
 set scrolloff=4
 set wildmenu
@@ -57,8 +53,8 @@ set whichwrap+=<,>,h,l
 set ignorecase
 set smartcase
 set hlsearch
-
 set incsearch
+
 set lazyredraw
 set magic
 set showmatch
@@ -122,8 +118,6 @@ set nospell
 
 map <leader>w :w<cr> 
 map <leader>r :!python3 a.py
-map <leader>n :new<cr> 
-map <leader>nv :vnew<cr>
 map <leader>rc :!g++ a.cpp && ./a.out
 map <leader>c :!xclip -sel c 
 map <leader>l :Lex<bar> :vertical resize 30<CR>
@@ -145,19 +139,13 @@ nnoremap X "_X
 nnoremap d "_d
 nnoremap D "_D
 vnoremap d "_d
-nnoremap <leader>d ""d
-nnoremap <leader>D ""D
-vnoremap <leader>d ""d
 
 nnoremap Y y$
 nnoremap yw yiw
 
 nnoremap <silent><Tab>       :bn<CR> 
-nnoremap <silent><S-Tab>     :bp<CR> 
-nnoremap <silent><Leader>q   :bd<CR> 
 
 nnoremap <silent> <leader>ev :e $MYVIMRC<CR>
-nnoremap <silent> <leader>sv :so $MYVIMRC<CR>
 
 nnoremap <leader><leader>v :vertical terminal<CR>
 nnoremap <leader><leader>s :terminal<CR>
