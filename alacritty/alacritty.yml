@@ -1,10 +1,14 @@
 window: 
     dimensions: 
         columns: 115
-        lines: 30
+        lines: 31
     padding:    
         x: 5
-        y: 3
+        y: 5
+    vertical_chars: 50
+    horizontal_chars: 100
+    starting_x_offset: 100
+    starting_y_offset: 100
     dynamic_padding: true
     decorations: None
     startup_mode: Windowed 
