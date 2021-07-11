@@ -9,39 +9,41 @@ export ZSH="/home/adityasharma/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="powerlevel9k/powerlevel9k"
+# ZSH_THEME="powerlevel9k/powerlevel9k"
+# ZSH_THEME="robbyrussell"
+ZSH_THEME="lambda"
 
-POWERLEVEL9K_MODE='nerdfont-complete'
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon context dir newline status)
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon context dir newline status)
-POWERLEVEL9K_OS_ICON_BACKGROUND=000 #black
-POWERLEVEL9K_OS_ICON_FOREGROUND=255 #white
-POWERLEVEL9K_CONTEXT_TEMPLATE='%n'
-POWERLEVEL9K_CONTEXT_DEFAULT_FOREGROUND=249 # white
-POWERLEVEL9K_DIR_HOME_FOREGROUND=249
-POWERLEVEL9K_DIR_HOME_SUBFOLDER_FOREGROUND=249
-POWERLEVEL9K_DIR_ETC_FOREGROUND=249
-POWERLEVEL9K_DIR_DEFAULT_FOREGROUND=249
-POWERLEVEL9K_DIR_HOME_BACKGROUND=024 #deepskyblue4a
-POWERLEVEL9K_DIR_HOME_SUBFOLDER_BACKGROUND=024 #deepskyblue4a
-POWERLEVEL9K_DIR_ETC_BACKGROUND=024 #deepskyblue4a
-POWERLEVEL9K_DIR_DEFAULT_BACKGROUND=024 #deepskyblue4a
-POWERLEVEL9K_SHORTEN_DIR_LENGTH=1
-POWERLEVEL9K_HOME_ICON=''
-POWERLEVEL9K_HOME_SUB_ICON=''
-#POWERLEVEL9K_FOLDER_ICON=''
-POWERLEVEL9K_STATUS_VERBOSE=true
-POWERLEVEL9K_STATUS_CROSS=true
-POWERLEVEL9K_STATUS_OK_BACKGROUND=017
-POWERLEVEL9K_STATUS_ERROR_BACKGROUND=017
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(vcs)
-POWERLEVEL9K_VCS_CLEAN_FOREGROUND=017 # navyblue
-POWERLEVEL9K_VCS_CLEAN_BACKGROUND=040 # green3a
-POWERLEVEL9K_VCS_UNTRACKED_FOREGROUND=017 # navyblue
-POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND=220 # gold1
-POWERLEVEL9K_VCS_MODIFIED_FOREGROUND=236 #grey19
-POWERLEVEL9K_VCS_MODIFIED_BACKGROUND=160 #red3a
-POWERLEVEL9K_SHOW_CHANGESET=true
+#POWERLEVEL9K_MODE='nerdfont-complete'
+#POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon context dir newline status)
+#POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon context dir newline status)
+#POWERLEVEL9K_OS_ICON_BACKGROUND=000 #black
+#POWERLEVEL9K_OS_ICON_FOREGROUND=255 #white
+#POWERLEVEL9K_CONTEXT_TEMPLATE='%n'
+#POWERLEVEL9K_CONTEXT_DEFAULT_FOREGROUND=249 # white
+#POWERLEVEL9K_DIR_HOME_FOREGROUND=249
+#POWERLEVEL9K_DIR_HOME_SUBFOLDER_FOREGROUND=249
+#POWERLEVEL9K_DIR_ETC_FOREGROUND=249
+#POWERLEVEL9K_DIR_DEFAULT_FOREGROUND=249
+#POWERLEVEL9K_DIR_HOME_BACKGROUND=024 #deepskyblue4a
+#POWERLEVEL9K_DIR_HOME_SUBFOLDER_BACKGROUND=024 #deepskyblue4a
+#POWERLEVEL9K_DIR_ETC_BACKGROUND=024 #deepskyblue4a
+#POWERLEVEL9K_DIR_DEFAULT_BACKGROUND=024 #deepskyblue4a
+#POWERLEVEL9K_SHORTEN_DIR_LENGTH=1
+#POWERLEVEL9K_HOME_ICON=''
+#POWERLEVEL9K_HOME_SUB_ICON=''
+##POWERLEVEL9K_FOLDER_ICON=''
+#POWERLEVEL9K_STATUS_VERBOSE=true
+#POWERLEVEL9K_STATUS_CROSS=true
+#POWERLEVEL9K_STATUS_OK_BACKGROUND=017
+#POWERLEVEL9K_STATUS_ERROR_BACKGROUND=017
+#POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(vcs)
+#POWERLEVEL9K_VCS_CLEAN_FOREGROUND=017 # navyblue
+#POWERLEVEL9K_VCS_CLEAN_BACKGROUND=040 # green3a
+#POWERLEVEL9K_VCS_UNTRACKED_FOREGROUND=017 # navyblue
+#POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND=220 # gold1
+#POWERLEVEL9K_VCS_MODIFIED_FOREGROUND=236 #grey19
+#POWERLEVEL9K_VCS_MODIFIED_BACKGROUND=160 #red3a
+#POWERLEVEL9K_SHOW_CHANGESET=true
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
@@ -66,7 +68,7 @@ POWERLEVEL9K_SHOW_CHANGESET=true
 
 # Uncomment the following line if pasting URLs and other text is messed up.
 # DISABLE_MAGIC_FUNCTIONS=true
-
+ Introduction 
 # Uncomment the following line to disable colors in ls.
 # DISABLE_LS_COLORS="true"
 
@@ -114,12 +116,12 @@ source $ZSH/oh-my-zsh.sh
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+Preferred editor for local and remote sessions
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vim'
+else
+  export EDITOR='mvim'
+fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -130,6 +132,9 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-# alias zshconfig="mate ~/.zshrc"
+alias zshconfig="vim ~/.zshrc"
+alias vimconfig="vim ~/.vimrc"
+alias alaconfig="vim ~/.config/alacritty/alacritty.yml"
+
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
