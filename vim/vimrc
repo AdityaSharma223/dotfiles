@@ -26,11 +26,17 @@ call plug#begin('~/.vim/plugged')
    
     " colorschemes 
     Plug 'morhetz/gruvbox'
+    Plug 'herrbischoff/cobalt2.vim'
+    Plug 'arcticicestudio/nord-vim'
 
+    " colorscheme for lighline
+    Plug 'shinchu/lightline-gruvbox.vim'
 
 call plug#end() 
 
 let g:netrw_banner = 0 " removes the help from the :Lex command 
+let g:lightline = {}
+let g:lightline.colorscheme = 'gruvbox'
 
 
 set scrolloff=4
@@ -55,6 +61,7 @@ set ignorecase
 set smartcase
 set hlsearch
 set incsearch
+set clipboard=unnamedplus
 
 set lazyredraw
 set magic
@@ -110,6 +117,7 @@ set autoindent
 set smartindent
 
 set wrap
+set autochdir 
 set completeopt=longest,menuone
 
 set comments=sl:/*,mb:\ *,elx:\ */
