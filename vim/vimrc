@@ -3,7 +3,7 @@ set encoding=UTF-8 nobackup nowb noswapfile nowritebackup cursorline splitbelow 
 set nocompatible mouse=a shell=zsh foldenable autoread number relativenumber noshowmode 
 set backspace=eol,start,indent ignorecase smartcase hlsearch incsearch showmatch magic lazyredraw linespace=0
 set secure termguicolors noerrorbells novisualbell t_Co=256 background=dark shiftwidth=4 tabstop=4 softtabstop=4
-set autoindent smartindent autochdir spelllang=en_us nospell nowrap laststatus=2 showcmd ruler cmdheight=1
+set autoindent smartindent autochdir spelllang=en_us nospell wrap laststatus=2 showcmd ruler cmdheight=1
 set wildignore+=*/tmp/*,*/.cache/*,*/.git/*,*.so,*~,*.pyc,*.bak,*.class,*.swp,*.zip,*.pdf wildmenu
 set comments=sl:/*,mb:\ *,elx:\ */
 syntax enable 
@@ -24,6 +24,8 @@ call plug#begin('~/.vim/plugged')
     Plug 'arcticicestudio/nord-vim'
     " colorscheme for lighline
     Plug 'shinchu/lightline-gruvbox.vim'
+	" Goyo (a e s t h e t i c) 
+	Plug 'junegunn/goyo.vim'
 
 call plug#end() 
 
@@ -35,11 +37,13 @@ colorscheme gruvbox
 " Keybindings 
 let mapleader=","
 nnoremap <leader>w :w<CR>
-nnoremap <leader>r :!python3 a.py
+nnoremap <leader>r :!python3 %:p
 nnoremap <leader>rc :!g++ a.cpp && ./a.out
+nnoremap <leader>c :!xclip -sel c %:p
 nnoremap <leader><leader>v :vertical terminal<CR>
 nnoremap <leader><leader>s :terminal<CR>
-map <leader>l :Lex<bar> :vertical resize 30<CR>
+nnoremap <leader>l :Lex<bar> :vertical resize 30<CR>
+nnoremap <leader>g :Goyo<CR>
 
 nnoremap <Up> <nop>
 nnoremap <Down> <nop>
