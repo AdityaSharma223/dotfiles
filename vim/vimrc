@@ -1,34 +1,27 @@
-let mapleader=","
-
-set nocompatible
-set mouse=a
-set shell=zsh
+" General Settings 
+set encoding=UTF-8 nobackup nowb noswapfile nowritebackup cursorline splitbelow splitright 
+set nocompatible mouse=a shell=zsh foldenable autoread number relativenumber noshowmode 
+set backspace=eol,start,indent ignorecase smartcase hlsearch incsearch showmatch magic lazyredraw linespace=0
+set secure termguicolors noerrorbells novisualbell t_Co=256 background=dark shiftwidth=4 tabstop=4 softtabstop=4
+set autoindent smartindent autochdir spelllang=en_us nospell nowrap laststatus=2 showcmd ruler cmdheight=1
+set wildignore+=*/tmp/*,*/.cache/*,*/.git/*,*.so,*~,*.pyc,*.bak,*.class,*.swp,*.zip,*.pdf wildmenu
+set comments=sl:/*,mb:\ *,elx:\ */
+syntax enable 
 
 filetype on                 
 filetype plugin on
 filetype indent on
 
-set foldenable 
-
-set autoread
-
-" vimdiff option to ignore whitespace comparison
-set diffopt+=iwhite
-set diffexpr=""
-
-
+" Plugins 
 call plug#begin('~/.vim/plugged')
     Plug 'itchyny/lightline.vim'
-
     " syntax
     Plug 'tpope/vim-markdown'
     Plug 'ap/vim-css-color' " displays colors in css file 
-   
     " colorschemes 
     Plug 'morhetz/gruvbox'
     Plug 'herrbischoff/cobalt2.vim'
     Plug 'arcticicestudio/nord-vim'
-
     " colorscheme for lighline
     Plug 'shinchu/lightline-gruvbox.vim'
 
@@ -37,113 +30,21 @@ call plug#end()
 let g:netrw_banner = 0 " removes the help from the :Lex command 
 let g:lightline = {}
 let g:lightline.colorscheme = 'gruvbox'
-
-
-set scrolloff=4
-set wildmenu
-set wildmode=longest:full
-set wildignore+=*/tmp/*,*/.cache/*,*/.git/*,*.so,*~,*.pyc,*.bak,*.class,*.swp,*.zip,*.pdf 
-
-set laststatus=2
-set number
-set relativenumber
-set showcmd
-set so=7
-set ruler
-set cmdheight=1
-set hid
-set noshowmode
-
-set backspace=eol,start,indent
-set whichwrap+=<,>,h,l
-
-set ignorecase
-set smartcase
-set hlsearch
-set incsearch
-set clipboard=unnamedplus
-
-set lazyredraw
-set magic
-set showmatch
-set mat=2
-
-set noerrorbells
-set novisualbell
-set t_vb=
-set tm=500
-
-set linespace=0
-
-set secure
-
-syntax enable
-set t_Co=256
 colorscheme gruvbox
-set background=dark
-set termguicolors
-set cursorline
 
-set enc=utf-8
-set fenc=utf-8
-set termencoding=utf-8
-
-set ffs=unix,mac,dos
-
-set nobackup
-set nowb
-set noswapfile
-set nowritebackup
-
-set history=1000
-set undofile   
-set undolevels=1000
-set undoreload=10000
-set undodir=~/.vim/.undo,~tmp,/tmp
-set backupdir=~/.vim/.backup//
-set directory=~/.vim/.swp//
-
-set expandtab
-set smarttab
-
-set shiftwidth=4
-set tabstop=4
-set softtabstop=4
-
-set lbr
-set textwidth=500
-
-set autoindent
-set smartindent
-
-set wrap
-set autochdir 
-set completeopt=longest,menuone
-
-set comments=sl:/*,mb:\ *,elx:\ */
-
-set spelllang=en_us
-set complete+=kspell
-set nospell 
-
-map <leader>w :w<cr> 
-map <leader>r :!python3 a.py
-map <leader>rc :!g++ a.cpp && ./a.out
-map <leader>c :!xclip -sel c 
+" Keybindings 
+let mapleader=","
+nnoremap <leader>w :w<CR>
+nnoremap <leader>r :!python3 a.py
+nnoremap <leader>rc :!g++ a.cpp && ./a.out
+nnoremap <leader><leader>v :vertical terminal<CR>
+nnoremap <leader><leader>s :terminal<CR>
 map <leader>l :Lex<bar> :vertical resize 30<CR>
 
-noremap <Up> <Nop>
-noremap <Down> <Nop>
-noremap <Left> <Nop>
-noremap <Right> <Nop>
-
-noremap <PageUp> <Nop>
-noremap <PageDown> <Nop>
-
-" disable entering in replace mode when pressing insert twice. You can still enter in replace mode using R
-imap <Insert> <Nop>
-inoremap <S-Insert> <Insert>
-
+nnoremap <Up> <nop>
+nnoremap <Down> <nop>
+nnoremap <Left> <nop>
+nnoremap <Right> <nop>
 nnoremap x "_x
 nnoremap X "_X
 nnoremap d "_d
@@ -157,10 +58,9 @@ nnoremap <silent><Tab>       :bn<CR>
 
 nnoremap <silent> <leader>ev :e $MYVIMRC<CR>
 
-nnoremap <leader><leader>v :vertical terminal<CR>
-nnoremap <leader><leader>s :terminal<CR>
-
-
+" Transparent background
 hi! Normal ctermbg=NONE guibg=NONE 
 hi! NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE 
+   
+
 
