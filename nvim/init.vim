@@ -15,36 +15,47 @@ filetype indent on
 
 " Plugins 
 call plug#begin('~/.vim/plugged')
+	" lightline 
     Plug 'itchyny/lightline.vim'
-    " syntax
+
+	" syntax
     Plug 'tpope/vim-markdown'
     Plug 'ap/vim-css-color' " displays colors in css file 
-    " colorschemes 
-    Plug 'morhetz/gruvbox'
+    
+	" colorschemes 
+	Plug 'morhetz/gruvbox'
     Plug 'herrbischoff/cobalt2.vim'
     Plug 'arcticicestudio/nord-vim'
-    " colorscheme for lighline
+    
+	" colorscheme for lighline
     Plug 'shinchu/lightline-gruvbox.vim'
+	
 	" Goyo (a e s t h e t i c) 
 	Plug 'junegunn/goyo.vim'
-
 call plug#end() 
 
+" Modifictions
 let g:netrw_banner = 0 " removes the help from the :Lex command 
 let g:lightline = {}
 let g:lightline.colorscheme = 'gruvbox'
 colorscheme gruvbox
 
+" Transparent background
+hi! Normal ctermbg=NONE guibg=NONE 
+hi! NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE 
+
+
 " Keybindings 
 let mapleader=","
 nnoremap <leader>w :w<CR>
-nnoremap <leader>r :!python3 %:p
-nnoremap <leader>rc :!g++ a.cpp && ./a.out
+"nnoremap <leader>r :vsplit term://python3 %:p
+nnoremap <leader>rc :vsplit term://gcc a.cpp && ./a.out
 nnoremap <leader>c :!xclip -sel c %:p
-nnoremap <leader><leader>v :vertical terminal<CR>
-nnoremap <leader><leader>s :terminal<CR>
+nnoremap <leader><leader>v :vsplit<bar> :vertical resize 40<bar> :terminal<CR>
 nnoremap <leader>l :Lex<bar> :vertical resize 30<CR>
 nnoremap <leader>g :Goyo<CR>
+" to copy to both the clipboard and the primary selection 
+vnoremap <C-c> "*y :let @+=@*<CR>
 
 nnoremap <Up> <nop>
 nnoremap <Down> <nop>
@@ -63,8 +74,21 @@ nnoremap <silent><Tab>       :bn<CR>
 
 nnoremap <silent> <leader>ev :e $MYVIMRC<CR>
 
-" Transparent background
-hi! Normal ctermbg=NONE guibg=NONE 
-hi! NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE 
+" For running python 
+augroup exe_code 
+	autocmd! 
 
+	"execute python code 
+	autocmd FileType python nnoremap <buffer> <leader>r
+				\ :sp<bar> :resize -5<CR> :term python3 %<CR> :startinsert<CR>
+
+	"execute cpp code
+	autocmd FileType cpp nnoremap <buffer> <leader>c
+			\ :sp<bar> :resize -5<CR> :term  g++ %:t -o a<CR> :startinsert<CR>
+
+	"run cpp code
+	autocmd FileType cpp nnoremap <buffer> <leader>r
+			\ :sp<bar> :resize -5<CR> :term ./a<CR> :startinsert<CR>
+
+augroup END
 
