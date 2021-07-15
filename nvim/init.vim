@@ -74,7 +74,7 @@ nnoremap <silent><Tab>       :bn<CR>
 
 nnoremap <silent> <leader>ev :e $MYVIMRC<CR>
 
-" For running python 
+" For running and executing C++ and Python code. 
 augroup exe_code 
 	autocmd! 
 
