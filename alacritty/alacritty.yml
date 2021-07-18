@@ -1,17 +1,24 @@
+
+#############################################
+#       _                        __ _       #
+#  __ _| | __ _  ___ ___  _ __  / _(_) __ _ #
+# / _` | |/ _` |/ __/ _ \| '_ \| |_| |/ _` |#
+#| (_| | | (_| | (_| (_) | | | |  _| | (_| |#
+# \__,_|_|\__,_|\___\___/|_| |_|_| |_|\__, |#
+#                                     |___/ #
+#############################################
+
+
 window: 
     dimensions: 
-        columns: 115
+        columns: 116
         lines: 31
     padding:    
         x: 5
         y: 5
-    vertical_chars: 50
-    horizontal_chars: 100
-    starting_x_offset: 100
-    starting_y_offset: 100
     dynamic_padding: true
     decorations: None
-    startup_mode: Windowed 
+    startup_mode: Windowed
 
 scrolling:
   history: 10000
@@ -79,37 +86,6 @@ colors:
     white:   '#928374'
   # indexed_colors: []
 
-
-  ## Colors (Nord)
-  #colors:
-  #   # Default colors
-  #   primary:
-  #     background: '#2E3440'
-  #     foreground: '#D8DEE9'
-  #
-  #   # Normal colors
-  #   normal:
-  #     black:   '#3B4252'
-  #     red:     '#BF616A'
-  #     green:   '#A3BE8C'
-  #     yellow:  '#EBCB8B'
-  #     blue:    '#81A1C1'
-  #     magenta: '#B48EAD'
-  #     cyan:    '#88C0D0'
-  #     white:   '#E5E9F0'
-  #
-  #   # Bright colors
-  #   bright:
-  #     black:   '#4C566A'
-  #     red:     '#BF616A'
-  #     green:   '#A3BE8C'
-  #     yellow:  '#EBCB8B'
-  #     blue:    '#81A1C1'
-  #     magenta: '#B48EAD'
-  #     cyan:    '#8FBCBB'
-  #     white:   '#ECEFF4'
-
-
 bell:
   animation: EaseOutExpo
   color: '0xffffff'
@@ -156,4 +132,5 @@ font:
 # Keybindings 
 key_bindings:
     - { key: N,        mods: Control|Shift,    action: SpawnNewInstance    }
+    - { key: F,        mods: Control|Shift,    action: ToggleFullscreen    }
 

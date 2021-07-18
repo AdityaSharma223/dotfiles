@@ -1,17 +1,26 @@
+
+#################################################
+##         _                        __ _       ##
+## _______| |__     ___ ___  _ __  / _(_) __ _ ##
+##|_  / __| '_ \   / __/ _ \| '_ \| |_| |/ _` |##
+## / /\__ \ | | | | (_| (_) | | | |  _| | (_| |##
+##/___|___/_| |_|  \___\___/|_| |_|_| |_|\__, |##
+##                                       |___/ ##
+#################################################
+
 export TERM="xterm-256color"
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/adityasharma/.oh-my-zsh"
-
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 # ZSH_THEME="powerlevel9k/powerlevel9k"
 # ZSH_THEME="robbyrussell"
-ZSH_THEME="lambda"
+ZSH_THEME="half-life"
 
 #POWERLEVEL9K_MODE='nerdfont-complete'
 #POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon context dir newline status)
@@ -87,7 +96,7 @@ ZSH_THEME="lambda"
 # DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 # Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
+# stamp shwn in the history command output.
 # You can set one of the optional three formats:
 # "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
 # or set a custom format using the strftime function format specifications,
@@ -131,10 +140,34 @@ fi
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 #
-# Example aliases
-alias zshconfig="vim ~/.zshrc"
-alias vimconfig="vim ~/.vimrc"
-alias alaconfig="vim ~/.config/alacritty/alacritty.yml"
 
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+#function powerline_precmd() {
+#    PS1="$(powerline-shell --shell zsh $?)"
+#}
+#
+#function install_powerline_precmd() {
+#  for s in "${precmd_functions[@]}"; do
+#    if [ "$s" = "powerline_precmd" ]; then
+#      return
+#    fi
+#  done
+#  precmd_functions+=(powerline_precmd)
+#}
+#
+#if [ "$TERM" != "linux" ]; then
+#    install_powerline_precmd
+#fi
+
+
+# Example aliases
+
+alias v="nvim"
+alias zshconfig="nvim ~/.zshrc"
+alias vimconfig="nvim ~/.vimrc"
+alias alaconfig="nvim ~/.config/alacritty/alacritty.yml"
+alias nvimconfig="nvim ~/.config/nvim/init.vim"
+alias weather="curl wttr.in"
+alias clear="clear && fortune"
+
+fortune
 
