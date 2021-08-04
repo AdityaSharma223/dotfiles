@@ -1,63 +1,29 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
 
-#################################################
-##         _                        __ _       ##
-## _______| |__     ___ ___  _ __  / _(_) __ _ ##
-##|_  / __| '_ \   / __/ _ \| '_ \| |_| |/ _` |##
-## / /\__ \ | | | | (_| (_) | | | |  _| | (_| |##
-##/___|___/_| |_|  \___\___/|_| |_|_| |_|\__, |##
-##                                       |___/ ##
-#################################################
-
-export TERM="xterm-256color"
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/adityasharma/.oh-my-zsh"
+
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-# ZSH_THEME="powerlevel9k/powerlevel9k"
-# ZSH_THEME="robbyrussell"
-ZSH_THEME="half-life"
+# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+#ZSH_THEME="agnoster"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
-#POWERLEVEL9K_MODE='nerdfont-complete'
-#POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon context dir newline status)
-#POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon context dir newline status)
-#POWERLEVEL9K_OS_ICON_BACKGROUND=000 #black
-#POWERLEVEL9K_OS_ICON_FOREGROUND=255 #white
-#POWERLEVEL9K_CONTEXT_TEMPLATE='%n'
-#POWERLEVEL9K_CONTEXT_DEFAULT_FOREGROUND=249 # white
-#POWERLEVEL9K_DIR_HOME_FOREGROUND=249
-#POWERLEVEL9K_DIR_HOME_SUBFOLDER_FOREGROUND=249
-#POWERLEVEL9K_DIR_ETC_FOREGROUND=249
-#POWERLEVEL9K_DIR_DEFAULT_FOREGROUND=249
-#POWERLEVEL9K_DIR_HOME_BACKGROUND=024 #deepskyblue4a
-#POWERLEVEL9K_DIR_HOME_SUBFOLDER_BACKGROUND=024 #deepskyblue4a
-#POWERLEVEL9K_DIR_ETC_BACKGROUND=024 #deepskyblue4a
-#POWERLEVEL9K_DIR_DEFAULT_BACKGROUND=024 #deepskyblue4a
-#POWERLEVEL9K_SHORTEN_DIR_LENGTH=1
-#POWERLEVEL9K_HOME_ICON=''
-#POWERLEVEL9K_HOME_SUB_ICON=''
-##POWERLEVEL9K_FOLDER_ICON=''
-#POWERLEVEL9K_STATUS_VERBOSE=true
-#POWERLEVEL9K_STATUS_CROSS=true
-#POWERLEVEL9K_STATUS_OK_BACKGROUND=017
-#POWERLEVEL9K_STATUS_ERROR_BACKGROUND=017
-#POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(vcs)
-#POWERLEVEL9K_VCS_CLEAN_FOREGROUND=017 # navyblue
-#POWERLEVEL9K_VCS_CLEAN_BACKGROUND=040 # green3a
-#POWERLEVEL9K_VCS_UNTRACKED_FOREGROUND=017 # navyblue
-#POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND=220 # gold1
-#POWERLEVEL9K_VCS_MODIFIED_FOREGROUND=236 #grey19
-#POWERLEVEL9K_VCS_MODIFIED_BACKGROUND=160 #red3a
-#POWERLEVEL9K_SHOW_CHANGESET=true
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
+# a theme from this variable instead of looking in $ZSH/themes/
 # If set to an empty array, this variable will have no effect.
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
+POWERLEVEL9K_SHORTEN_DIR_LENGTH=1
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -76,8 +42,8 @@ ZSH_THEME="half-life"
 # export UPDATE_ZSH_DAYS=13
 
 # Uncomment the following line if pasting URLs and other text is messed up.
-# DISABLE_MAGIC_FUNCTIONS=true
- #Introduction 
+# DISABLE_MAGIC_FUNCTIONS="true"
+
 # Uncomment the following line to disable colors in ls.
 # DISABLE_LS_COLORS="true"
 
@@ -88,6 +54,8 @@ ZSH_THEME="half-life"
 # ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
+# Caution: this setting can cause issues with multiline prompts (zsh 5.7.1 and newer seem to work)
+# See https://github.com/ohmyzsh/ohmyzsh/issues/5765
 # COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
@@ -96,7 +64,7 @@ ZSH_THEME="half-life"
 # DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 # Uncomment the following line if you want to change the command execution time
-# stamp shwn in the history command output.
+# stamp shown in the history command output.
 # You can set one of the optional three formats:
 # "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
 # or set a custom format using the strftime function format specifications,
@@ -107,13 +75,13 @@ ZSH_THEME="half-life"
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
 # Which plugins would you like to load?
-# Standard plugins can be found in ~/.oh-my-zsh/plugins/*
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Standard plugins can be found in $ZSH/plugins/
+# Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  zsh-autosuggestions
-  git
+	zsh-autosuggestions
+	git
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -125,7 +93,12 @@ source $ZSH/oh-my-zsh.sh
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
-#Preferred editor for local and remote sessions
+# Preferred editor for local and remote sessions
+# if [[ -n $SSH_CONNECTION ]]; then
+#   export EDITOR='vim'
+# else
+#   export EDITOR='mvim'
+# fi
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vim'
 else
@@ -137,37 +110,17 @@ fi
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
+# users are encuraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 #
-
-#function powerline_precmd() {
-#    PS1="$(powerline-shell --shell zsh $?)"
-#}
-#
-#function install_powerline_precmd() {
-#  for s in "${precmd_functions[@]}"; do
-#    if [ "$s" = "powerline_precmd" ]; then
-#      return
-#    fi
-#  done
-#  precmd_functions+=(powerline_precmd)
-#}
-#
-#if [ "$TERM" != "linux" ]; then
-#    install_powerline_precmd
-#fi
-
-
 # Example aliases
-
-alias v="nvim"
-alias zshconfig="nvim ~/.zshrc"
-alias vimconfig="nvim ~/.vimrc"
-alias alaconfig="nvim ~/.config/alacritty/alacritty.yml"
-alias nvimconfig="nvim ~/.config/nvim/init.vim"
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
+alias zshconfig="nvim ~/.zshrc" 
+alias nvimconfig="nvim ~/.config/nvim/init.vim" 
+alias alaconfig="nvim ~/.config/alacritty/alacritty.yml" 
+alias v="nvim" 
 alias weather="curl wttr.in"
-alias clear="clear && fortune"
 
-fortune
-
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
