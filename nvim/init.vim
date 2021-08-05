@@ -36,6 +36,7 @@ call plug#begin('~/.vim/plugged')
 	Plug 'morhetz/gruvbox'
     Plug 'herrbischoff/cobalt2.vim'
     Plug 'arcticicestudio/nord-vim'
+	Plug 'dracula/vim', { 'as': 'dracula' }
     
 	" colorscheme for lighline
     Plug 'shinchu/lightline-gruvbox.vim'
@@ -51,8 +52,8 @@ call plug#end()
 " Modifictions
 let g:netrw_banner = 0 " removes the help from the :Lex command 
 let g:lightline = {}
-let g:lightline.colorscheme = 'gruvbox'
-colorscheme gruvbox
+let g:lightline.colorscheme = 'wombat'
+colorscheme dracula
 
 let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6, 'relative': v:true, 'yoffset': 1.0 } }
 
@@ -62,11 +63,16 @@ hi! NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE
 
 
 " Keybindings 
+
 let mapleader=","
 nnoremap <leader>w :w<CR>
+" to copy the file contents
 nnoremap <leader>c :!xclip -sel c %:p<CR>
+" to launch a quick terminal
 nnoremap <leader><leader>v :vsplit<bar> :vertical resize 40<bar> :terminal<CR>
+" to open a working tree (kinda) 
 nnoremap <leader>l :Lex<bar> :vertical resize 30<CR>
+" A E S T H E T I C 
 nnoremap <leader>g :Goyo<CR>
 " to copy to both the clipboard and the primary selection 
 vnoremap <C-c> "*y :let @+=@*<CR>
@@ -90,7 +96,7 @@ nnoremap <silent><Tab>       :bn<CR>
 
 nnoremap <silent> <leader>ev :e $MYVIMRC<CR>
 
-" For running and executing C++ and Python code. 
+" For running and executing C++ and Python and Rust code. 
 augroup exe_code 
 	autocmd! 
 
@@ -108,4 +114,5 @@ augroup exe_code
 
 
 augroup END
+
 
