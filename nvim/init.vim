@@ -1,4 +1,3 @@
-
 "''''''''''''''''''''''''''''''''''''''''''''''''''''''"
 "            _                              __ _       "
 " _ ____   _(_)_ __ ___     ___ ___  _ __  / _(_) __ _ "
@@ -9,7 +8,7 @@
 "''''''''''''''''''''''''''''''''''''''''''''''''''''''"
 
 " General Settings 
-set encoding=UTF-8 nobackup nowb noswapfile nowritebackup cursorline splitbelow splitright 
+set encoding=UTF-8 nobackup nowb noswapfile nowritebackup splitbelow splitright 
 set nocompatible mouse=a shell=zsh foldenable autoread number relativenumber noshowmode 
 set backspace=eol,start,indent ignorecase smartcase hlsearch incsearch showmatch magic lazyredraw linespace=0
 set secure termguicolors noerrorbells novisualbell t_Co=256 background=dark shiftwidth=4 tabstop=4 softtabstop=4
@@ -25,37 +24,33 @@ filetype indent on
 
 " Plugins 
 call plug#begin('~/.vim/plugged')
-	" lightline 
-    Plug 'itchyny/lightline.vim'
-
-	" syntax
-    Plug 'tpope/vim-markdown'
-    Plug 'ap/vim-css-color' " displays colors in css file 
-    
-	" colorschemes 
-	Plug 'morhetz/gruvbox'
-    Plug 'herrbischoff/cobalt2.vim'
-    Plug 'arcticicestudio/nord-vim'
-	Plug 'dracula/vim', { 'as': 'dracula' }
-    
-	" colorscheme for lighline
-    Plug 'shinchu/lightline-gruvbox.vim'
-	
-	" Goyo (a e s t h e t i c) 
-	Plug 'junegunn/goyo.vim'
-
-	" Fuzzy finder 
-	Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-
+" lightline 
+Plug 'itchyny/lightline.vim'
+" syntax
+Plug 'tpope/vim-markdown'
+Plug 'ap/vim-css-color' " displays colors in css file 
+" colorschemes 
+Plug 'morhetz/gruvbox'
+Plug 'herrbischoff/cobalt2.vim'
+Plug 'arcticicestudio/nord-vim'
+Plug 'dracula/vim', { 'as': 'dracula' }
+" colorscheme for lighline
+Plug 'shinchu/lightline-gruvbox.vim'
+" Goyo (a e s t h e t i c) 
+Plug 'junegunn/goyo.vim'
+" Fuzzy finder 
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+" Auto pairing
+Plug 'jiangmiao/auto-pairs'
 call plug#end() 
 
 " Modifictions
 let g:netrw_banner = 0 " removes the help from the :Lex command 
 let g:lightline = {}
-let g:lightline.colorscheme = 'wombat'
-colorscheme dracula
+let g:lightline.colorscheme = 'gruvbox'
+colorscheme gruvbox
 
-let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6, 'relative': v:true, 'yoffset': 1.0 } }
+let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.5, 'relative': v:true, 'yoffset': 1 }}
 
 " Transparent background
 hi! Normal ctermbg=NONE guibg=NONE 
@@ -63,7 +58,6 @@ hi! NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE
 
 
 " Keybindings 
-
 let mapleader=","
 nnoremap <leader>w :w<CR>
 " to copy the file contents
@@ -78,6 +72,8 @@ nnoremap <leader>g :Goyo<CR>
 vnoremap <C-c> "*y :let @+=@*<CR>
 " to launch fzf (fuzzy finder) 
 nnoremap <leader>f :FZF<CR>
+" to find a place holder <++>, delete it and go in insert mode
+nnoremap <Space><Space> <Esc>/<++><Enter>c4l
 
 nnoremap <Up> <nop>
 nnoremap <Down> <nop>
@@ -91,6 +87,8 @@ vnoremap d "_d
 
 nnoremap Y y$
 nnoremap yw yiw
+nnoremap cw ciw
+nnoremap dw diw
 
 nnoremap <silent><Tab>       :bn<CR> 
 
@@ -102,11 +100,11 @@ augroup exe_code
 
 	"execute python code 
 	autocmd FileType python nnoremap <buffer> <leader>r
-				\ :sp<bar> :resize -5<bar> :term python3 %<CR> :startinsert<CR>
+				\ :w<bar> :sp<bar> :resize -5<bar> :term python3 %<CR> :startinsert<CR>
 
 	"compile and run cpp code 
 	autocmd FileType cpp nnoremap <buffer> <leader>r
-			\ :sp<bar> :resize -5<bar> :term  g++ -std=c++11 -O2 -Wall % -o a && ./a<CR> :startinsert<CR>
+			\ :w<bar> :sp<bar> :resize -5<bar> :term  g++ -std=c++20 -O2 -Wall % -o a && ./a<CR> :startinsert<CR>
 
 	"build and run rust code 
 	autocmd FileType rust nnoremap <buffer> <leader>r
