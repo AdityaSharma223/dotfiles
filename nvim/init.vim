@@ -15,6 +15,7 @@ set secure termguicolors noerrorbells novisualbell t_Co=256 background=dark shif
 set autoindent smartindent autochdir spelllang=en_us nospell wrap laststatus=2 showcmd ruler cmdheight=1
 set wildignore+=*/tmp/*,*/.cache/*,*/.git/*,*.so,*~,*.pyc,*.bak,*.class,*.swp,*.zip,*.pdf wildmenu
 set comments=sl:/*,mb:\ *,elx:\ */
+set cursorline  
 syntax enable
 
 
@@ -27,30 +28,38 @@ call plug#begin('~/.vim/plugged')
 " lightline 
 Plug 'itchyny/lightline.vim'
 " syntax
+Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-markdown'
 Plug 'ap/vim-css-color' " displays colors in css file 
+" Plug 'vim-python/python-syntax'
 " colorschemes 
+Plug 'jacoborus/tender.vim'
 Plug 'morhetz/gruvbox'
-Plug 'herrbischoff/cobalt2.vim'
-Plug 'arcticicestudio/nord-vim'
-Plug 'dracula/vim', { 'as': 'dracula' }
-" colorscheme for lighline
+Plug 'sainnhe/sonokai'
+Plug 'sainnhe/everforest'
 Plug 'shinchu/lightline-gruvbox.vim'
 " Goyo (a e s t h e t i c) 
 Plug 'junegunn/goyo.vim'
-" Fuzzy finder 
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 " Auto pairing
-Plug 'jiangmiao/auto-pairs'
+Plug 'jiangmiao/auto-pairs' 
+" Ranger integration 
+Plug 'francoiscabrol/ranger.vim' " default key binding <leader>f
+" it has a dependency tho :/ 
+Plug 'rbgrouleff/bclose.vim'
+" nvim starify (fancy start screen :p) 
+Plug 'mhinz/vim-startify'
 call plug#end() 
+
 
 " Modifictions
 let g:netrw_banner = 0 " removes the help from the :Lex command 
 let g:lightline = {}
-let g:lightline.colorscheme = 'gruvbox'
 colorscheme gruvbox
+let g:lightline = {
+  \ 'colorscheme': 'gruvbox',
+  \ }
+let g:python_highlight_all = 1
 
-let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.5, 'relative': v:true, 'yoffset': 1 }}
 
 " Transparent background
 hi! Normal ctermbg=NONE guibg=NONE 
@@ -60,18 +69,22 @@ hi! NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE
 " Keybindings 
 let mapleader=","
 nnoremap <leader>w :w<CR>
+
 " to copy the file contents
 nnoremap <leader>c :!xclip -sel c %:p<CR>
+
 " to launch a quick terminal
-nnoremap <leader><leader>v :vsplit<bar> :vertical resize 40<bar> :terminal<CR>
+nnoremap <leader><leader>v :vsplit<bar> :vertical resize 40<bar> :terminal<CR> :startinsert<CR>
+
 " to open a working tree (kinda) 
 nnoremap <leader>l :Lex<bar> :vertical resize 30<CR>
+
 " A E S T H E T I C 
 nnoremap <leader>g :Goyo<CR>
+
 " to copy to both the clipboard and the primary selection 
 vnoremap <C-c> "*y :let @+=@*<CR>
-" to launch fzf (fuzzy finder) 
-nnoremap <leader>f :FZF<CR>
+
 " to find a place holder <++>, delete it and go in insert mode
 nnoremap <Space><Space> <Esc>/<++><Enter>c4l
 
@@ -94,6 +107,7 @@ nnoremap <silent><Tab>       :bn<CR>
 
 nnoremap <silent> <leader>ev :e $MYVIMRC<CR>
 
+
 " For running and executing C++ and Python and Rust code. 
 augroup exe_code 
 	autocmd! 
@@ -110,7 +124,5 @@ augroup exe_code
 	autocmd FileType rust nnoremap <buffer> <leader>r
 			\ :sp<bar> :resize -5<bar> :term rustc % -o a && ./a<CR> :startinsert<CR>
 
-
 augroup END
-
 

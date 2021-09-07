@@ -23,7 +23,6 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # a theme from this variable instead of looking in $ZSH/themes/
 # If set to an empty array, this variable will have no effect.
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
-POWERLEVEL9K_SHORTEN_DIR_LENGTH=1
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -100,9 +99,9 @@ source $ZSH/oh-my-zsh.sh
 #   export EDITOR='mvim'
 # fi
 if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='vim'
+  export EDITOR='nvim'
 else
-  export EDITOR='mvim'
+  export EDITOR='nvim'
 fi
 
 # Compilation flags
@@ -110,17 +109,22 @@ fi
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encuraged to define aliases within the ZSH_CUSTOM folder.
+# users are encouraged to define aliases within he ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias zshconfig="nvim ~/.zshrc" 
-alias nvimconfig="nvim ~/.config/nvim/init.vim" 
-alias alaconfig="nvim ~/.config/alacritty/alacritty.yml" 
+alias zshconfig="v ~/.zshrc" 
+alias nvimconfig="v ~/.config/nvim/init.vim" 
+alias alaconfig="v ~/.config/alacritty/alacritty.yml" 
 alias v="nvim" 
 alias weather="curl wttr.in"
+alias wmap="telnet mapscii.me"
+alias tlauncher="sudo java -jar Downloads/TLauncher-2.8.jar"
+alias cpc="touch a.cpp && cat ~/Templates/cpa.cpp >> a.cpp && v a.cpp"
+alias cpy="touch a.py && cat ~/Templates/cpa.py >> a.py && v a.py"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
