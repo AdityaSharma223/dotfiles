@@ -31,12 +31,13 @@ Plug 'itchyny/lightline.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-markdown'
 Plug 'ap/vim-css-color' " displays colors in css file 
-" Plug 'vim-python/python-syntax'
 " colorschemes 
 Plug 'jacoborus/tender.vim'
 Plug 'morhetz/gruvbox'
 Plug 'sainnhe/sonokai'
 Plug 'sainnhe/everforest'
+Plug 'arcticicestudio/nord-vim'
+Plug 'romainl/flattened'
 Plug 'shinchu/lightline-gruvbox.vim'
 " Goyo (a e s t h e t i c) 
 Plug 'junegunn/goyo.vim'
