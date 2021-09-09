@@ -30,14 +30,9 @@ Plug 'itchyny/lightline.vim'
 " syntax
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-markdown'
-Plug 'ap/vim-css-color' " displays colors in css file 
+Plug 'ap/vim-css-color' " displays colors in css file
 " colorschemes 
-Plug 'jacoborus/tender.vim'
 Plug 'morhetz/gruvbox'
-Plug 'sainnhe/sonokai'
-Plug 'sainnhe/everforest'
-Plug 'arcticicestudio/nord-vim'
-Plug 'romainl/flattened'
 Plug 'shinchu/lightline-gruvbox.vim'
 " Goyo (a e s t h e t i c) 
 Plug 'junegunn/goyo.vim'
@@ -59,7 +54,6 @@ colorscheme gruvbox
 let g:lightline = {
   \ 'colorscheme': 'gruvbox',
   \ }
-let g:python_highlight_all = 1
 
 
 " Transparent background
@@ -81,7 +75,7 @@ nnoremap <leader><leader>v :vsplit<bar> :vertical resize 40<bar> :terminal<CR> :
 nnoremap <leader>l :Lex<bar> :vertical resize 30<CR>
 
 " A E S T H E T I C 
-nnoremap <leader>g :Goyo<CR>
+nnoremap <leader>g :Goyo<bar> :so %<CR>
 
 " to copy to both the clipboard and the primary selection 
 vnoremap <C-c> "*y :let @+=@*<CR>
