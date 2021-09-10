@@ -6,6 +6,9 @@
 "|_| |_|\_/ |_|_| |_| |_|  \___\___/|_| |_|_| |_|\__, |"
 "                                                |___/ "
 "''''''''''''''''''''''''''''''''''''''''''''''''''''''"
+" Author: Aditya Sharma 
+" Date: 10th September 2021
+" Github: github.com/adityasharma223  
 
 " General Settings 
 set encoding=UTF-8 nobackup nowb noswapfile nowritebackup splitbelow splitright 
@@ -103,7 +106,7 @@ nnoremap <silent><Tab>       :bn<CR>
 nnoremap <silent> <leader>ev :e $MYVIMRC<CR>
 
 
-" For running and executing C++ and Python and Rust code. 
+" For running and executing according to the file type. 
 augroup exe_code 
 	autocmd! 
 
@@ -119,5 +122,7 @@ augroup exe_code
 	autocmd FileType rust nnoremap <buffer> <leader>r
 			\ :sp<bar> :resize -5<bar> :term rustc % -o a && ./a<CR> :startinsert<CR>
 
+	" if it is a markdown file then i want it to display it in typora. 
+	autocmd FileType markdown nnoremap <buffer> <leader>r
+				\ :w<bar> :!typora %<CR> " make sure u have typora installed lol. 
 augroup END
-
