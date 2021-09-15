@@ -18,7 +18,7 @@ set secure termguicolors noerrorbells novisualbell t_Co=256 background=dark shif
 set autoindent smartindent autochdir spelllang=en_us nospell wrap laststatus=2 showcmd ruler cmdheight=1
 set wildignore+=*/tmp/*,*/.cache/*,*/.git/*,*.so,*~,*.pyc,*.bak,*.class,*.swp,*.zip,*.pdf wildmenu
 set comments=sl:/*,mb:\ *,elx:\ */
-set cursorline  
+"set cursorline  
 syntax enable
 
 
@@ -37,6 +37,7 @@ Plug 'ap/vim-css-color' " displays colors in css file
 " colorschemes 
 Plug 'morhetz/gruvbox'
 Plug 'shinchu/lightline-gruvbox.vim'
+Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
 " Goyo (a e s t h e t i c) 
 Plug 'junegunn/goyo.vim'
 " Auto pairing
@@ -54,8 +55,9 @@ call plug#end()
 let g:netrw_banner = 0 " removes the help from the :Lex command 
 let g:lightline = {}
 colorscheme gruvbox
+set background=dark
 let g:lightline = {
-  \ 'colorscheme': 'gruvbox',
+  \ 'colorscheme': 'srcery_drk',
   \ }
 
 
@@ -125,4 +127,9 @@ augroup exe_code
 	" if it is a markdown file then i want it to display it in typora. 
 	autocmd FileType markdown nnoremap <buffer> <leader>r
 				\ :w<bar> :!typora %<CR> " make sure u have typora installed lol. 
+	
+	" if it is a html file it will open it in the browser
+	autocmd FileType html nnoremap <bufer> <leader>r
+				\ :w<bar> :!brave-browser %<CR> " make sure u have brave-browser or change it with anyother browser
 augroup END
+
