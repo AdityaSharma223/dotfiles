@@ -57,24 +57,35 @@ nnoremap <silent><Tab>       :bn<CR>
 nnoremap <silent> <leader>ev :e $MYVIMRC<CR>
 
 
-" For running and executing C++ and Python and Rust code. 
+" For running and executing according to the file type. 
 augroup exe_code 
 	autocmd! 
 
 	"execute python code 
 	autocmd FileType python nnoremap <buffer> <leader>r
-				\ :w<bar> :term python3 %<CR>
+				\ :w<bar> :sp<bar> :resize -5<bar> :term python3 %<CR> :startinsert<CR>
+
+	"opening a python shell for use
+	autocmd FileType python nnoremap <buffer> <leader>sh
+				\ :w<bar> :sp<bar> :resize -5<bar> :term python3 <CR> :startinsert<CR>
 
 	"compile and run cpp code 
 	autocmd FileType cpp nnoremap <buffer> <leader>r
-			\ :w<bar> :! g++ -std=c++20 -O2 -Wall % -o a<CR> :term ./a<CR>
+			\ :w<bar> :sp<bar> :resize -5<bar> :term  g++ -std=c++20 -O2 -Wall % -o a && ./a<CR> :startinsert<CR>
 
 	"build and run rust code 
 	autocmd FileType rust nnoremap <buffer> <leader>r
-			\ :sp<bar> :! rustc % -o a<CR> :term ./a<CR>
+			\ :sp<bar> :resize -5<bar> :term rustc % -o a && ./a<CR> :startinsert<CR>
 
 	" if it is a markdown file then i want it to display it in typora. 
 	autocmd FileType markdown nnoremap <buffer> <leader>r
-				\ :w<bar> :!typora %<CR>
-augroup END
+				\ :w<bar> :!typora %<CR> " make sure u have typora installed lol. 
+	
+	" if it is a html file it will open it in the browser
+	autocmd FileType html nnoremap <buffer> <leader>r
+				\ :w<bar> :!brave-browser %<CR> " make sure u have brave-browser or change it with anyother browser
 
+	" trying to run an executable file
+	autocmd FileType sh nnoremap <buffer> <leader>r
+				\ :w<bar> :sp<bar> :resize -5<bar> :term ./%<CR>  :startinsert<CR>
+augroup END
