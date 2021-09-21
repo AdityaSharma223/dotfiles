@@ -18,7 +18,7 @@ set secure termguicolors noerrorbells novisualbell t_Co=256 shiftwidth=4 tabstop
 set autoindent smartindent autochdir spelllang=en_us nospell wrap laststatus=2 showcmd ruler cmdheight=1
 set wildignore+=*/tmp/*,*/.cache/*,*/.git/*,*.so,*~,*.pyc,*.bak,*.class,*.swp,*.zip,*.pdf wildmenu
 set comments=sl:/*,mb:\ *,elx:\ */
-set cursorline  
+" set cursorline  
 syntax enable
 
 
@@ -136,7 +136,7 @@ augroup exe_code
 
 	"execute python code 
 	autocmd FileType python nnoremap <buffer> <leader>r
-				\ :w<bar> :sp<bar> :resize -5<bar> :trm python3 %<CR> :startinsert<CR>
+				\ :w<bar> :sp<bar> :resize -5<bar> term python3 %<CR> :startinsert<CR>
 
 	"opening a python shell for use
 	autocmd FileType python nnoremap <buffer> <leader>sh
