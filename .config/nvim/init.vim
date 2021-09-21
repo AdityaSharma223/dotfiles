@@ -7,18 +7,18 @@
 "                                                |___/ "
 "''''''''''''''''''''''''''''''''''''''''''''''''''''''"
 " Author: Aditya Sharma 
-" Date: 10th September 2021
+" Date: 20th September 2021
 " Github: github.com/adityasharma223  
 
 " General Settings 
-set encoding=UTF-8 nobackup nowb noswapfile nowritebackup splitbelow splitright 
-set nocompatible mouse=a shell=zsh foldenable autoread number relativenumber noshowmode 
+set encoding=UTF-8 nobackup nowb noswapfile nowritebackup splitbelow splitright mat=0
+set nocompatible mouse=a shell=fish foldenable autoread number relativenumber noshowmode 
 set backspace=eol,start,indent ignorecase smartcase hlsearch incsearch showmatch magic lazyredraw linespace=0
-set secure termguicolors noerrorbells novisualbell t_Co=256 background=dark shiftwidth=4 tabstop=4 softtabstop=4
+set secure termguicolors noerrorbells novisualbell t_Co=256 shiftwidth=4 tabstop=4 softtabstop=4
 set autoindent smartindent autochdir spelllang=en_us nospell wrap laststatus=2 showcmd ruler cmdheight=1
 set wildignore+=*/tmp/*,*/.cache/*,*/.git/*,*.so,*~,*.pyc,*.bak,*.class,*.swp,*.zip,*.pdf wildmenu
 set comments=sl:/*,mb:\ *,elx:\ */
-"set cursorline  
+set cursorline  
 syntax enable
 
 
@@ -34,14 +34,17 @@ Plug 'itchyny/lightline.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-markdown'
 Plug 'ap/vim-css-color' " displays colors in css file
+Plug 'jiangmiao/auto-pairs' 
+Plug 'tpope/vim-commentary'
+" NERDTree
+Plug 'preservim/nerdtree'
 " colorschemes 
 Plug 'morhetz/gruvbox'
+Plug 'srcery-colors/srcery-vim'
+Plug 'altercation/vim-colors-solarized'
 Plug 'shinchu/lightline-gruvbox.vim'
-Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
-" Goyo (a e s t h e t i c) 
-Plug 'junegunn/goyo.vim'
-" Auto pairing
-Plug 'jiangmiao/auto-pairs' 
+" Vim Devicons
+Plug 'ryanoasis/vim-devicons'
 " Ranger integration 
 Plug 'francoiscabrol/ranger.vim' " default key binding <leader>f
 " it has a dependency tho :/ 
@@ -52,13 +55,25 @@ call plug#end()
 
 
 " Modifictions
-let g:netrw_banner = 0 " removes the help from the :Lex command 
 let g:lightline = {}
-colorscheme gruvbox
+colorscheme srcery
 set background=dark
+let g:webdevicons_enable_startify = 1
 let g:lightline = {
-  \ 'colorscheme': 'srcery_drk',
-  \ }
+	\ 'component_function': {
+	\   'filetype': 'MyFiletype',
+	\   'fileformat': 'MyFileformat',
+	\ },
+	\ 'colorscheme': 'srcery'
+	\ }
+
+" to enable devicons in lightline
+function! MyFiletype()
+return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype . ' ' . WebDevIconsGetFileTypeSymbol() : 'no ft') : ''
+endfunction
+function! MyFileformat()
+return winwidth(0) > 70 ? (&fileformat . ' ' . WebDevIconsGetFileFormatSymbol()) : ''
+endfunction
 
 
 " Transparent background
@@ -69,18 +84,25 @@ hi! NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE
 " Keybindings 
 let mapleader=","
 nnoremap <leader>w :w<CR>
+nnoremap <leader>q :wq<CR>
 
+" to copy the github token
+nnoremap <leader>g :!xclip -sel c /home/adityasharma/main/github/githubtoken<CR>
+
+" to add, commit and push thru vim
+nnoremap <leader>p :sp<bar> :resize -5<bar> :term git add . && git commit -m "<++>" && git push<CR>
+ 
 " to copy the file contents
 nnoremap <leader>c :!xclip -sel c %:p<CR>
+
+" to comment or uncomment 
+nnoremap <leader>gc :norm gcc<CR>
 
 " to launch a quick terminal
 nnoremap <leader><leader>v :vsplit<bar> :vertical resize 40<bar> :terminal<CR> :startinsert<CR>
 
 " to open a working tree (kinda) 
-nnoremap <leader>l :Lex<bar> :vertical resize 30<CR>
-
-" A E S T H E T I C 
-nnoremap <leader>g :Goyo<bar> :so %<CR>
+nnoremap <leader>l :NERDTree<CR>
 
 " to copy to both the clipboard and the primary selection 
 vnoremap <C-c> "*y :let @+=@*<CR>
@@ -114,7 +136,11 @@ augroup exe_code
 
 	"execute python code 
 	autocmd FileType python nnoremap <buffer> <leader>r
-				\ :w<bar> :sp<bar> :resize -5<bar> :term python3 %<CR> :startinsert<CR>
+				\ :w<bar> :sp<bar> :resize -5<bar> :trm python3 %<CR> :startinsert<CR>
+
+	"opening a python shell for use
+	autocmd FileType python nnoremap <buffer> <leader>sh
+				\ :w<bar> :sp<bar> :resize -5<bar> :term python3 <CR> :startinsert<CR>
 
 	"compile and run cpp code 
 	autocmd FileType cpp nnoremap <buffer> <leader>r
@@ -129,7 +155,10 @@ augroup exe_code
 				\ :w<bar> :!typora %<CR> " make sure u have typora installed lol. 
 	
 	" if it is a html file it will open it in the browser
-	autocmd FileType html nnoremap <bufer> <leader>r
+	autocmd FileType html nnoremap <buffer> <leader>r
 				\ :w<bar> :!brave-browser %<CR> " make sure u have brave-browser or change it with anyother browser
-augroup END
 
+	" trying to run an executable file
+	autocmd FileType sh nnoremap <buffer> <leader>r
+				\ :w<bar> :sp<bar> :resize -5<bar> :term ./%<CR>  :startinsert<CR>
+augroup END
