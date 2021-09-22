@@ -14,12 +14,13 @@
 set encoding=UTF-8 nobackup nowb noswapfile nowritebackup splitbelow splitright mat=0
 set nocompatible mouse=a shell=fish foldenable autoread number relativenumber noshowmode 
 set backspace=eol,start,indent ignorecase smartcase hlsearch incsearch showmatch magic lazyredraw linespace=0
-set secure termguicolors noerrorbells novisualbell t_Co=256 shiftwidth=4 tabstop=4 softtabstop=4
+set secure noerrorbells novisualbell t_Co=256 shiftwidth=4 tabstop=4 softtabstop=4
 set autoindent smartindent autochdir spelllang=en_us nospell wrap laststatus=2 showcmd ruler cmdheight=1
 set wildignore+=*/tmp/*,*/.cache/*,*/.git/*,*.so,*~,*.pyc,*.bak,*.class,*.swp,*.zip,*.pdf wildmenu
 set comments=sl:/*,mb:\ *,elx:\ */
-" set cursorline  
+set cursorline  
 syntax enable
+set termguicolors
 
 
 filetype on                 
@@ -51,6 +52,8 @@ Plug 'francoiscabrol/ranger.vim' " default key binding <leader>f
 Plug 'rbgrouleff/bclose.vim'
 " nvim starify (fancy start screen :p) 
 Plug 'mhinz/vim-startify'
+" Practice
+Plug 'ThePrimeagen/vim-be-good'
 call plug#end() 
 
 
@@ -136,7 +139,7 @@ augroup exe_code
 
 	"execute python code 
 	autocmd FileType python nnoremap <buffer> <leader>r
-				\ :w<bar> :sp<bar> :resize -5<bar> term python3 %<CR> :startinsert<CR>
+				\ :w<bar> :sp<bar> :resize -5<bar> :term python3 %<CR> :startinsert<CR>
 
 	"opening a python shell for use
 	autocmd FileType python nnoremap <buffer> <leader>sh
