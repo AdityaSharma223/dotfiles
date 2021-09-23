@@ -1,3 +1,2 @@
 set fish_greeting
-set EDITOR "nvim"
-
+set -gx EDITOR nvim
