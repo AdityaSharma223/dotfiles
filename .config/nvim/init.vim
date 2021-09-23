@@ -93,7 +93,7 @@ nnoremap <leader>q :wq<CR>
 nnoremap <leader>g :!xclip -sel c /home/adityasharma/main/github/githubtoken<CR>
 
 " to add, commit and push thru vim
-nnoremap <leader>p :sp<bar> :resize -5<bar> :term git add . && git commit -m "<++>" && git push<CR>
+nnoremap <leader>p :sp<bar> :resize -5<bar> :term git add . && git commit -m "from vim" && git push<CR>
  
 " to copy the file contents
 nnoremap <leader>c :!xclip -sel c %:p<CR>
