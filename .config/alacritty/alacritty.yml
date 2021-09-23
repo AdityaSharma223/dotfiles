@@ -298,7 +298,7 @@ schemes:
       - { index: 17, color: '0xdb4b4b' }
 
 # Apply
-colors: *srcery
+colors: *gruvbox_hard
 
 
 bell:

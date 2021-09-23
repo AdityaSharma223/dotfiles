@@ -59,7 +59,7 @@ call plug#end()
 
 " Modifictions
 let g:lightline = {}
-colorscheme srcery
+colorscheme gruvbox
 set background=dark
 let g:webdevicons_enable_startify = 1
 let g:lightline = {
@@ -67,7 +67,7 @@ let g:lightline = {
 	\   'filetype': 'MyFiletype',
 	\   'fileformat': 'MyFileformat',
 	\ },
-	\ 'colorscheme': 'srcery'
+	\ 'colorscheme': 'gruvbox'
 	\ }
 
 " to enable devicons in lightline

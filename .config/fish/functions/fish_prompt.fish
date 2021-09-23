@@ -33,7 +33,7 @@ function fish_prompt
     set git_info "$git_info$normal)"
   end
 
-  echo -n -s $normal '[' $yellow (whoami) $green '@' $red (hostname -s) $normal ' ' $cwd ''  $git_info $normal ']$ '
+  echo -n -s $normal '[' $yellow (whoami) $normal '@' $red (hostname -s) $normal ' ' $cwd ''  $git_info $normal ']$ '
 end
 
 
