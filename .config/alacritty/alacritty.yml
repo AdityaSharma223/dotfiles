@@ -11,8 +11,8 @@ window:
         columns: 116
         lines: 30
     padding:    
-        x: 5
-        y: 5
+        x: 3
+        y: 3
     position: 
         x: 100
         y: 90
