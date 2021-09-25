@@ -6,6 +6,7 @@ SETUVAR _fish_abbr_fishchange:fish_config\x20starting\x2dtab\x2dname
 SETUVAR _fish_abbr_fishconfig:nvim\x20\x7e/\x2econfig/fish/config\x2efish
 SETUVAR _fish_abbr_fishprompt:nvim\x20\x7e/\x2econfig/fish/functions/fish_prompt\x2efish
 SETUVAR _fish_abbr_gt:xclip\x20\x2dsel\x20c\x20\x7e/main/github/githubtoken
+SETUVAR _fish_abbr_kittyconfig:nvim\x20\x7e/\x2econfig/kitty/kitty\x2econf
 SETUVAR _fish_abbr_nvimconfig:nvim\x20\x7e/\x2econfig/nvim/init\x2evim
 SETUVAR _fish_abbr_v:nvim
 SETUVAR fish_color_autosuggestion:006363
