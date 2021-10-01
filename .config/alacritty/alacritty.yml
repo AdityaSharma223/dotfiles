@@ -298,7 +298,7 @@ schemes:
       - { index: 17, color: '0xdb4b4b' }
 
 # Apply
-colors: *gruvbox_hard
+colors: *srcery
 
 
 bell:
@@ -306,7 +306,7 @@ bell:
   color: '0xffffff'
   duration: 0
 
-background_opacity: 0.85
+background_opacity: 0.9
 
 mouse:
   double_click: { threshold: 300 }
@@ -325,7 +325,7 @@ cursor:
   #   - ▇ Block
   #   - _ Underline
   #   - | Beam
-  style: Beam
+  style: Block
 
   unfocused_hollow: true
 

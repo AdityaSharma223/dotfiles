@@ -1,6 +1,7 @@
 if status is-interactive
     set fish_greeting
     set -gx EDITOR nvim
+    abbr --add cpy "touch a.py && cat ~/Templates/a.py >> a.py && nvim a.py"
     abbr --add v nvim 
     abbr --add alaconfig nvim ~/.config/alacritty/alacritty.yml
     abbr --add fishconfig nvim ~/.config/fish/config.fish
