@@ -65,12 +65,12 @@ super + g
 #################################################################
 
 # Brave
-# super + b
-#     brave
+super + b
+    brave
 
-# nvim 
-super + n
-    nvim
+# sublime text
+super + s
+    subl
 #Atom
 # super + e
 #     atom

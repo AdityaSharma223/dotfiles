@@ -1,4 +1,6 @@
 if status is-interactive
+    # use vim keybindings lol 
+    fish_vi_key_bindings
     set fish_greeting
     set -gx EDITOR nvim
     abbr --add cpy "touch a.py && cat ~/Templates/a.py >> a.py && nvim a.py"

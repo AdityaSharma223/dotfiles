@@ -217,7 +217,7 @@ layouts = [
     layout.Bsp(**layout_theme),
     layout.Floating(**layout_theme),
     # layout.RatioTile(**layout_theme),
-    # layout.Max(**layout_theme)
+    layout.Max(**layout_theme)
 ]
 
 # COLORS FOR THE BAR
@@ -567,7 +567,7 @@ floating_layout = layout.Floating(float_rules=[
     Match(title='branchdialog'),  # gitk
     Match(title='pinentry'),  # GPG key password entry
     Match(wm_class='Arcolinux-welcome-app.py'),
-    Match(wm_class='Arcolinux-tweak-tool.py'),
+    # Match(wm_class='Arcolinux-tweak-tool.py'),
     Match(wm_class='Arcolinux-calamares-tool.py'),
     Match(wm_class='confirm'),
     Match(wm_class='dialog'),
