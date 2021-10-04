@@ -431,7 +431,7 @@ def init_widgets_list():
                         background = colors[1],
                         foreground = colors[2],
                         fontsize = 12,
-                        format="%d-%m-%Y %I:%M %p"
+                        format="%d/%m %I:%M %p"
                         ),
                widget.Sep(
                         linewidth = 2,
