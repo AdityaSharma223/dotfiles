@@ -211,8 +211,8 @@ layout_theme = init_layout_theme()
 
 
 layouts = [
-    layout.MonadWide(margin=8, border_width=2, border_focus="#fce8c3", border_normal="#1c1b19"),
-    layout.MonadTall(margin=8, border_width=2, border_focus="#fce8c3", border_normal="#1c1b19"),
+    layout.MonadWide(margin=8, border_width=2, border_focus="#ebdbb2", border_normal="#282828"),
+    layout.MonadTall(margin=8, border_width=2, border_focus="#ebdbb2", border_normal="#282828"),
     # layout.Matrix(**layout_theme),
     layout.Bsp(**layout_theme),
     layout.Floating(**layout_theme),
@@ -223,15 +223,15 @@ layouts = [
 # COLORS FOR THE BAR
 #Theme name : ArcoLinux Default
 def init_colors():
-    return [["#1c1b19", "#1c1b19"], # color 0
-            ["#1c1b19", "#1c1b19"], # color 1
-            ["#fce8c3", "#fce8c3"], # color 2
-            ["#fbb829", "#fbb829"], # color 3
+    return [["#1d2021", "#1d2021"], # color 0
+            ["#1d2021", "#1d2021"], # color 1
+            ["#ebdbb2", "#ebdbb2"], # color 2
+            ["#fe8019", "#fe8019"], # color 3
             ["#3384d0", "#3384d0"], # color 4
             ["#f3f4f5", "#f3f4f5"], # color 5
             ["#cd1f3f", "#cd1f3f"], # color 6
             ["#62FF00", "#62FF00"], # color 7
-            ["#0aaeb3", "#0aaeb3"], # color 8
+            ["#458588", "#458588"], # color 8
             ["#a9a9a9", "#a9a9a9"]] # color 9
 
 
@@ -474,7 +474,7 @@ def init_screens():
     #         Screen(top=bar.Bar(widgets=init_widgets_screen2(), size=26, opacity=0.85))]
     # return [Screen(top=bar.Bar(widgets=init_widgets_screen1(), size=26, opacity=1, margin=[8,8,0,8])),
     #         Screen(top=bar.Bar(widgets=init_widgets_screen2(), size=26, opacity=1, margin=[8,8,0,8]))]
-    return [Screen(top=bar.Bar(widgets=init_widgets_screen1(), size=26, opacity=1, margin=[8,8,0,8]))]
+    return [Screen(top=bar.Bar(widgets=init_widgets_screen1(), size=25, opacity=1, margin=[8,8,0,8]))]
 screens = init_screens()
 
 

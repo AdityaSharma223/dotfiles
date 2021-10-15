@@ -48,6 +48,8 @@ Plug 'preservim/nerdtree'
 Plug 'morhetz/gruvbox'
 Plug 'srcery-colors/srcery-vim'
 Plug 'altercation/vim-colors-solarized'
+Plug 'daltonmenezes/aura-theme'
+Plug 'ajmwagar/vim-deus'
 Plug 'shinchu/lightline-gruvbox.vim'
 " Vim Devicons
 Plug 'ryanoasis/vim-devicons'
@@ -55,10 +57,10 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'francoiscabrol/ranger.vim' " default key binding <leader>f
 " it has a dependency tho :/ 
 Plug 'rbgrouleff/bclose.vim'
-" nvim starify (fancy start screen :p) 
-" Plug 'mhinz/vim-startify'
 " Practice
 Plug 'ThePrimeagen/vim-be-good'
+" python completion ? 
+Plug 'rkulla/pydiction'
 call plug#end() 
 
 
@@ -93,6 +95,8 @@ let g:lightline = {
 	\ },
 	\ 'colorscheme': 'srcery'
 	\ }
+let g:pydiction_location = '~/.vim/plugged/pydiction/complete-dict'
+let g:pydiction_menu_height = 3
 
 " to enable devicons in lightline
 function! MyFiletype()
@@ -111,17 +115,11 @@ hi! NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE
 " Keybindings 
 let mapleader=","
 nnoremap <leader>w :w<CR>
-nnoremap <leader>q :q!<CR>
+nnoremap <leader>q :q<CR>
 
 " Fuzzy find 
 nnoremap <leader>F :Files<CR>
 
-" to copy the github token
-nnoremap <leader>g :!xclip -sel c /home/adityasharma/main/github/githubtoken<CR>
-
-" to add, commit and push thru vim
-nnoremap <leader>p :sp<bar> :resize -5<bar> :term git add . && git commit -m "from vim" && git push<CR>
- 
 " to copy the file contents
 nnoremap <leader>c :!xclip -sel c %:p<CR>
 
@@ -129,7 +127,7 @@ nnoremap <leader>c :!xclip -sel c %:p<CR>
 nnoremap <leader>gc :norm gcc<CR>
 
 " to launch a quick terminal
-nnoremap <leader><leader>v :vsplit<bar> :vertical resize 40<bar> :terminal<CR> :startinsert<CR>
+nnoremap <leader><leader>v :vsplit<bar> :vertical resize 45<bar> :terminal<CR> :startinsert<CR>
 
 " to open a working tree (kinda) 
 nnoremap <leader>l :NERDTree<CR>
@@ -157,7 +155,7 @@ nnoremap dw diw
 
 nnoremap <silent><Tab>       :bn<CR> 
 
-nnoremap <silent> <leader>ev :e $MYVIMRC<CR>
+nnoremap <silent> <leader>ev :tabe $MYVIMRC<CR>
 
 
 " For running and executing according to the file type. 
@@ -167,6 +165,11 @@ augroup exe_code
 	"execute python code 
 	autocmd FileType python nnoremap <buffer> <leader>r
 				\ :w<bar> :sp<bar> :resize -5<bar> :term python %<CR> :startinsert<CR>
+
+
+	"execute js code 
+	autocmd FileType javascript nnoremap <buffer> <leader>r
+				\ :w<bar> :sp<bar> :resize -5<bar> :term node %<CR> :startinsert<CR>
 
 	"opening a python shell for use
 	autocmd FileType python nnoremap <buffer> <leader>sh
@@ -186,7 +189,7 @@ augroup exe_code
 	
 	" if it is a html file it will open it in the browser
 	autocmd FileType html nnoremap <buffer> <leader>r
-				\ :w<bar> :!brave %<CR> " make sure u have brave-browser or change it with anyother browser
+				\ :w<bar> :!brave %<CR> " make sure u have brave-browser or change it with any other browser
 
 	" trying to run an executable file
 	autocmd FileType sh nnoremap <buffer> <leader>r
