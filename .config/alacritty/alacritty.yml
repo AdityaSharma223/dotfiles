@@ -276,7 +276,7 @@ bell:
   color: '0xffffff'
   duration: 0
 
-background_opacity: 0.9
+background_opacity: 0.85
 
 mouse:
   double_click: { threshold: 300 }
@@ -295,7 +295,7 @@ cursor:
   #   - ▇ Block
   #   - _ Underline
   #   - | Beam
-  style: Block
+  style: Beam
 
   unfocused_hollow: true
 

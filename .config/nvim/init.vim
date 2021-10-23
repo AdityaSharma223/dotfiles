@@ -194,6 +194,10 @@ augroup exe_code
 	" trying to run an executable file
 	autocmd FileType sh nnoremap <buffer> <leader>r
 				\ :w<bar> :sp<bar> :resize -5<bar> :term ./%<CR>  :startinsert<CR>
+
+	" trying to run and compile a groff
+	autocmd FileType nroff nnoremap <buffer> <leader>r
+				\ :w<bar> :!groff -ms % -T pdf > za.pdf && zathura za.pdf<CR>
 augroup END
 
 highlight Comment gui=italic
