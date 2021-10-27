@@ -64,6 +64,10 @@ super + g
 # SUPER + ... KEYS
 #################################################################
 
+# zathura
+super + z
+    zathura
+
 # Brave
 super + b
     brave
