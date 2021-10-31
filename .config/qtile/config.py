@@ -223,8 +223,8 @@ layouts = [
 # COLORS FOR THE BAR
 #Theme name : ArcoLinux Default
 def init_colors():
-    return [["#1d2021", "#1d2021"], # color 0
-            ["#1d2021", "#1d2021"], # color 1
+    return [["#1c1b19", "#1c1b19"], # color 0
+            ["#1c1b19", "#1c1b19"], # color 1
             ["#ebdbb2", "#ebdbb2"], # color 2
             ["#fe8019", "#fe8019"], # color 3
             ["#3384d0", "#3384d0"], # color 4

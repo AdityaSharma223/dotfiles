@@ -47,11 +47,8 @@ Plug 'preservim/nerdtree'
 " colorschemes 
 Plug 'morhetz/gruvbox'
 Plug 'srcery-colors/srcery-vim'
-Plug 'altercation/vim-colors-solarized'
-Plug 'daltonmenezes/aura-theme'
-Plug 'ajmwagar/vim-deus'
-Plug 'frenzyexists/aquarium-vim', { 'branch': 'develop' }
 Plug 'shinchu/lightline-gruvbox.vim'
+Plug 'jaredgorski/spacecamp'
 " Vim Devicons
 Plug 'ryanoasis/vim-devicons'
 " Ranger integration 
@@ -96,6 +93,7 @@ let g:dashboard_custom_header = [
 \]
 let g:lightline = {}
 let g:dashboard_default_executive ='fzf'
+" colorscheme spacecamp
 colorscheme srcery
 let g:aqua_transparency = 1
 let g:aqua_bold = 1
@@ -108,8 +106,6 @@ let g:lightline = {
 	\ },
 	\ 'colorscheme': 'srcery'
 	\ }
-let g:pydiction_location = '~/.vim/plugged/pydiction/complete-dict'
-let g:pydiction_menu_height = 3
 
 " to enable devicons in lightline
 function! MyFiletype()
