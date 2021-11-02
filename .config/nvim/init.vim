@@ -47,8 +47,8 @@ Plug 'preservim/nerdtree'
 " colorschemes 
 Plug 'morhetz/gruvbox'
 Plug 'srcery-colors/srcery-vim'
+Plug 'joshdick/onedark.vim'
 Plug 'shinchu/lightline-gruvbox.vim'
-Plug 'jaredgorski/spacecamp'
 " Vim Devicons
 Plug 'ryanoasis/vim-devicons'
 " Ranger integration 
@@ -61,24 +61,6 @@ call plug#end()
 
 
 " Modifictions
-" let g:dashboard_custom_header=[
-"     \'',
-"     \'⡆⣐⢕⢕⢕⢕⢕⢕⢕⢕⠅⢗⢕⢕⢕⢕⢕⢕⢕⠕⠕⢕⢕⢕⢕⢕⢕⢕⢕⢕',
-"     \'⢐⢕⢕⢕⢕⢕⣕⢕⢕⠕⠁⢕⢕⢕⢕⢕⢕⢕⢕⠅⡄⢕⢕⢕⢕⢕⢕⢕⢕⢕',
-"     \'⢕⢕⢕⢕⢕⠅⢗⢕⠕⣠⠄⣗⢕⢕⠕⢕⢕⢕⠕⢠⣿⠐⢕⢕⢕⠑⢕⢕⠵⢕',
-"     \'⢕⢕⢕⢕⠁⢜⠕⢁⣴⣿⡇⢓⢕⢵⢐⢕⢕⠕⢁⣾⢿⣧⠑⢕⢕⠄⢑⢕⠅⢕',
-"     \'⢕⢕⠵⢁⠔⢁⣤⣤⣶⣶⣶⡐⣕⢽⠐⢕⠕⣡⣾⣶⣶⣶⣤⡁⢓⢕⠄⢑⢅⢑',
-"     \'⠍⣧⠄⣶⣾⣿⣿⣿⣿⣿⣿⣷⣔⢕⢄⢡⣾⣿⣿⣿⣿⣿⣿⣿⣦⡑⢕⢤⠱⢐',
-"     \'⢠⢕⠅⣾⣿⠋⢿⣿⣿⣿⠉⣿⣿⣷⣦⣶⣽⣿⣿⠈⣿⣿⣿⣿⠏⢹⣷⣷⡅⢐',
-"     \'⣔⢕⢥⢻⣿⡀⠈⠛⠛⠁⢠⣿⣿⣿⣿⣿⣿⣿⣿⡀⠈⠛⠛⠁⠄⣼⣿⣿⡇⢔',
-"     \'⢕⢕⢽⢸⢟⢟⢖⢖⢤⣶⡟⢻⣿⡿⠻⣿⣿⡟⢀⣿⣦⢤⢤⢔⢞⢿⢿⣿⠁⢕',
-"     \'⢕⢕⠅⣐⢕⢕⢕⢕⢕⣿⣿⡄⠛⢀⣦⠈⠛⢁⣼⣿⢗⢕⢕⢕⢕⢕⢕⡏⣘⢕',
-"     \'⢕⢕⠅⢓⣕⣕⣕⣕⣵⣿⣿⣿⣾⣿⣿⣿⣿⣿⣿⣿⣷⣕⢕⢕⢕⢕⡵⢀⢕⢕',
-"     \'⢑⢕⠃⡈⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⢃⢕⢕⢕',
-"     \'⣆⢕⠄⢱⣄⠛⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⢁⢕⢕⠕⢁',
-"     \'⣿⣦⡀⣿⣿⣷⣶⣬⣍⣛⣛⣛⡛⠿⠿⠿⠛⠛⢛⣛⣉⣭⣤⣂⢜⠕⢑⣡⣴⣿',
-"     \'',
-"     \]
 let g:dashboard_custom_header = [
 \ ' ███╗   ██╗ ███████╗ ██████╗  ██╗   ██╗ ██╗ ███╗   ███╗',
 \ ' ████╗  ██║ ██╔════╝██╔═══██╗ ██║   ██║ ██║ ████╗ ████║',
@@ -90,13 +72,12 @@ let g:dashboard_custom_header = [
 \ '                                                       ',
 \ '                                                       ',
 \ '                                                       ',
+\ '                                                       ',
+\ '                                                       ',
 \]
 let g:lightline = {}
 let g:dashboard_default_executive ='fzf'
-" colorscheme spacecamp
-colorscheme srcery
-let g:aqua_transparency = 1
-let g:aqua_bold = 1
+colorscheme onedark
 set background=dark
 let g:webdevicons_enable_startify = 1
 let g:lightline = {
@@ -104,7 +85,7 @@ let g:lightline = {
 	\   'filetype': 'MyFiletype',
 	\   'fileformat': 'MyFileformat',
 	\ },
-	\ 'colorscheme': 'srcery'
+	\ 'colorscheme': 'onedark'
 	\ }
 
 " to enable devicons in lightline

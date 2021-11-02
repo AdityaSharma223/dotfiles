@@ -203,35 +203,35 @@ for i in groups:
 def init_layout_theme():
     return {"margin":5,
             "border_width":2,
-            "border_focus": "#ebdbb2",
-            "border_normal": "#282828"
+            "border_focus": "#61afef",
+            "border_normal": "#282c34"
             }
 
 layout_theme = init_layout_theme()
 
 
 layouts = [
-    layout.MonadWide(margin=8, border_width=2, border_focus="#ebdbb2", border_normal="#282828"),
-    layout.MonadTall(margin=8, border_width=2, border_focus="#ebdbb2", border_normal="#282828"),
-    # layout.Matrix(**layout_theme),
+    layout.MonadWide(margin=8, border_width=2, border_focus="#61afef", border_normal="#282828"),
+    layout.MonadTall(margin=8, border_width=2, border_focus="#61afef", border_normal="#282828"),
+    layout.Matrix(**layout_theme),
     layout.Bsp(**layout_theme),
     layout.Floating(**layout_theme),
-    # layout.RatioTile(**layout_theme),
+    layout.RatioTile(**layout_theme),
     layout.Max(**layout_theme)
 ]
 
 # COLORS FOR THE BAR
 #Theme name : ArcoLinux Default
 def init_colors():
-    return [["#1c1b19", "#1c1b19"], # color 0
-            ["#1c1b19", "#1c1b19"], # color 1
-            ["#ebdbb2", "#ebdbb2"], # color 2
+    return [["#282c34", "#282c34"], # color 0
+            ["#282c34", "#282c34"], # color 1
+            ["#abb2bf", "#abb2bf"], # color 2
             ["#fe8019", "#fe8019"], # color 3
             ["#3384d0", "#3384d0"], # color 4
             ["#f3f4f5", "#f3f4f5"], # color 5
             ["#cd1f3f", "#cd1f3f"], # color 6
             ["#62FF00", "#62FF00"], # color 7
-            ["#458588", "#458588"], # color 8
+            ["#98c379", "#98c379"], # color 8
             ["#a9a9a9", "#a9a9a9"]] # color 9
 
 

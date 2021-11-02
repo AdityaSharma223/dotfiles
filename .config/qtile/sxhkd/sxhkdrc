@@ -55,10 +55,12 @@ super + F11
 #     rofi -show drun -icon-theme "Papirus" -show-icons
 
 super + r
-    rofi -combi-modi window,drun,ssh -theme gruvbox-dark -font "hack 10" -show combi -icon-theme "Papirus" -show-icons
+    rofi -combi-modi window,drun,ssh -font "hack 10" -show combi -icon-theme "Papirus" -show-icons
+    # rofi -combi-modi window,drun,ssh -theme gruvbox-dark -font "hack 10" -show combi -icon-theme "Papirus" -show-icons
 
 super + g
-    rofi -show calc -modi calc -no-show-match -no-sort -theme gruvbox-dark -font "hack 10" -icon-theme "Papirus" -show-icons
+    rofi -show calc -modi calc -no-show-match -no-sort -font "hack 10" -icon-theme "Papirus" -show-icons
+    # rofi -show calc -modi calc -no-show-match -no-sort -theme gruvbox-dark -font "hack 10" -icon-theme "Papirus" -show-icons
 
 #################################################################
 # SUPER + ... KEYS
