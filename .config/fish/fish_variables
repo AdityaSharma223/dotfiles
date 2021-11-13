@@ -2,6 +2,7 @@
 # VERSION: 3.0
 SETUVAR __fish_initialized:3100
 SETUVAR _fish_abbr_alaconfig:nvim\x20/home/aditya/\x2econfig/alacritty/alacritty\x2eyml
+SETUVAR _fish_abbr_cpc:touch\x20a\x2ecpp\x20\x26\x26\x20cat\x20\x7e/main/Templates/a\x2ecpp\x20\x3e\x3e\x20a\x2ecpp\x20\x26\x26\x20nvim\x20a\x2ecpp
 SETUVAR _fish_abbr_cpy:touch\x20a\x2epy\x20\x26\x26\x20cat\x20\x7e/main/Templates/a\x2epy\x20\x3e\x3e\x20a\x2epy\x20\x26\x26\x20nvim\x20a\x2epy
 SETUVAR _fish_abbr_fishconfig:nvim\x20/home/aditya/\x2econfig/fish/config\x2efish
 SETUVAR _fish_abbr_fishprompt:nvim\x20/home/aditya/\x2econfig/fish/functions/fish_prompt\x2efish

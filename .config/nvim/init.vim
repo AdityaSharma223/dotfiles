@@ -6,11 +6,10 @@
 "|_| |_|\_/ |_|_| |_| |_|  \___\___/|_| |_|_| |_|\__, |"
 "                                                |___/ "
 "''''''''''''''''''''''''''''''''''''''''''''''''''''''"
-" Author: Aditya Sharma 
-" Date: 20th September 2021
-" Github: github.com/adityasharma223  
+" AUTHOR: ADITYA SHARMA 
+" GITHUB: github.com/adityasharma223  
 
-" General Settings 
+" GENERAL SETTINGS 
 set encoding=UTF-8 nobackup nowb noswapfile nowritebackup splitbelow splitright mat=0
 set nocompatible mouse=a shell=fish foldenable autoread number relativenumber noshowmode 
 set backspace=eol,start,indent ignorecase smartcase hlsearch incsearch showmatch magic lazyredraw linespace=0
@@ -18,7 +17,7 @@ set secure noerrorbells novisualbell t_Co=256 shiftwidth=4 tabstop=4 softtabstop
 set autoindent smartindent autochdir spelllang=en_us nospell wrap laststatus=2 showcmd ruler cmdheight=1
 set wildignore+=*/tmp/*,*/.cache/*,*/.git/*,*.so,*~,*.pyc,*.bak,*.class,*.swp,*.zip,*.pdf wildmenu
 set comments=sl:/*,mb:\ *,elx:\ */
-set cursorline  
+set cursorline
 syntax enable
 set termguicolors
 
@@ -27,7 +26,7 @@ filetype on
 filetype plugin on
 filetype indent on
 
-" Plugins 
+" PLUGINS 
 call plug#begin('~/.vim/plugged')
 " lightline 
 Plug 'itchyny/lightline.vim'
@@ -60,21 +59,42 @@ Plug 'ThePrimeagen/vim-be-good'
 call plug#end() 
 
 
-" Modifictions
-let g:dashboard_custom_header = [
-\ ' ███╗   ██╗ ███████╗ ██████╗  ██╗   ██╗ ██╗ ███╗   ███╗',
-\ ' ████╗  ██║ ██╔════╝██╔═══██╗ ██║   ██║ ██║ ████╗ ████║',
-\ ' ██╔██╗ ██║ █████╗  ██║   ██║ ██║   ██║ ██║ ██╔████╔██║',
-\ ' ██║╚██╗██║ ██╔══╝  ██║   ██║ ╚██╗ ██╔╝ ██║ ██║╚██╔╝██║',
-\ ' ██║ ╚████║ ███████╗╚██████╔╝  ╚████╔╝  ██║ ██║ ╚═╝ ██║',
-\ ' ╚═╝  ╚═══╝ ╚══════╝ ╚═════╝    ╚═══╝   ╚═╝ ╚═╝     ╚═╝',
-\ '                                                       ',
-\ '                                                       ',
-\ '                                                       ',
-\ '                                                       ',
-\ '                                                       ',
-\ '                                                       ',
-\]
+" MODIFICTIONS
+" let g:dashboard_custom_header = [
+" \ '                                                       ',
+" \ '                                                       ',
+" \ ' ███╗   ██╗ ███████╗ ██████╗  ██╗   ██╗ ██╗ ███╗   ███╗',
+" \ ' ████╗  ██║ ██╔════╝██╔═══██╗ ██║   ██║ ██║ ████╗ ████║',
+" \ ' ██╔██╗ ██║ █████╗  ██║   ██║ ██║   ██║ ██║ ██╔████╔██║',
+" \ ' ██║╚██╗██║ ██╔══╝  ██║   ██║ ╚██╗ ██╔╝ ██║ ██║╚██╔╝██║',
+" \ ' ██║ ╚████║ ███████╗╚██████╔╝  ╚████╔╝  ██║ ██║ ╚═╝ ██║',
+" \ ' ╚═╝  ╚═══╝ ╚══════╝ ╚═════╝    ╚═══╝   ╚═╝ ╚═╝     ╚═╝',
+" \ '                                                       ',
+" \ '                                                       ',
+" \ '                                                       ',
+" \ '                                                       ',
+" \]
+
+let g:dashboard_custom_header =[
+    \'    ⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⠤⠖⠚⢉⣩⣭⡭⠛⠓⠲⠦⣄⡀⠀⠀⠀⠀⠀⠀⠀  ',
+    \'    ⠀⠀⠀⠀⠀⠀⢀⡴⠋⠁⠀⠀⠊⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠳⢦⡀⠀⠀⠀⠀  ',
+    \'    ⠀⠀⠀⠀⢀⡴⠃⢀⡴⢳⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⣆⠀⠀⠀  ',
+    \'    ⠀⠀⠀⠀⡾⠁⣠⠋⠀⠈⢧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢧⠀⠀  ',
+    \'    ⠀⠀⠀⣸⠁⢰⠃⠀⠀⠀⠈⢣⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⣇⠀  ',
+    \'    ⠀⠀⠀⡇⠀⡾⡀⠀⠀⠀⠀⣀⣹⣆⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢹⠀  ',
+    \'    ⠀⠀⢸⠃⢀⣇⡈⠀⠀⠀⠀⠀⠀⢀⡑⢄⡀⢀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⡇  ',
+    \'    ⠀⠀⢸⠀⢻⡟⡻⢶⡆⠀⠀⠀⠀⡼⠟⡳⢿⣦⡑⢄⠀⠀⠀⠀⠀⠀⠀⠀⢸⡇  ',
+    \'    ⠀⠀⣸⠀⢸⠃⡇⢀⠇⠀⠀⠀⠀⠀⡼⠀⠀⠈⣿⡗⠂⠀⠀⠀⠀⠀⠀⠀⢸⠁  ',
+    \'    ⠀⠀⡏⠀⣼⠀⢳⠊⠀⠀⠀⠀⠀⠀⠱⣀⣀⠔⣸⠁⠀⠀⠀⠀⠀⠀⠀⢠⡟⠀  ',
+    \'    ⠀⠀⡇⢀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠠⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⢸⠃⠀  ',
+    \'    ⠀⢸⠃⠘⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠁⠀⠀⢀⠀⠀⠀⠀⠀⣾⠀⠀  ',
+    \'    ⠀⣸⠀⠀⠹⡄⠀⠀⠈⠁⠀⠀⠀⠀⠀⠀⠀⡞⠀⠀⠀⠸⠀⠀⠀⠀⠀⡇⠀⠀  ',
+    \'    ⠀⡏⠀⠀⠀⠙⣆⠀⠀⠀⠀⠀⠀⠀⢀⣠⢶⡇⠀⠀⢰⡀⠀⠀⠀⠀⠀⡇⠀⠀  ',
+    \'    ⢰⠇⡄⠀⠀⠀⡿⢣⣀⣀⣀⡤⠴⡞⠉⠀⢸⠀⠀⠀⣿⡇⠀⠀⠀⠀⠀⣧⠀⠀  ',
+    \'    ⣸⠀⡇⠀⠀⠀⠀⠀⠀⠉⠀⠀⠀⢹⠀⠀⢸⠀⠀⢀⣿⠇⠀⠀⠀⠁⠀⢸⠀⠀  ',
+    \'    ⣿⠀⡇⠀⠀⠀⠀⠀⢀⡤⠤⠶⠶⠾⠤⠄⢸⠀⡀⠸⣿⣀⠀⠀⠀⠀⠀⠈⣇⠀  ',
+    \]
+
 let g:lightline = {}
 let g:dashboard_default_executive ='fzf'
 colorscheme onedark
@@ -85,7 +105,7 @@ let g:lightline = {
 	\   'filetype': 'MyFiletype',
 	\   'fileformat': 'MyFileformat',
 	\ },
-	\ 'colorscheme': 'onedark'
+	\ 'colorscheme': 'one'
 	\ }
 
 " to enable devicons in lightline
@@ -102,7 +122,7 @@ hi! Normal ctermbg=NONE guibg=NONE
 hi! NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE 
 
 
-" Keybindings 
+" KEYBINDINGS 
 let mapleader=","
 nnoremap <leader>w :w<CR>
 nnoremap <leader>q :q<CR>
@@ -138,7 +158,7 @@ nnoremap d "_d
 nnoremap D "_D
 vnoremap d "_d
 
-nnoremap Y y$
+nnoremap Y 0y$
 nnoremap yw yiw
 nnoremap cw ciw
 nnoremap dw diw
@@ -148,7 +168,7 @@ nnoremap <silent><Tab>       :bn<CR>
 nnoremap <silent> <leader>ev :tabe $MYVIMRC<CR>
 
 
-" For running and executing according to the file type. 
+" FOR RUNNING AND EXECUTING ACCORDING TO THE FILE TYPE. 
 augroup exe_code 
 	autocmd! 
 
@@ -189,5 +209,7 @@ augroup exe_code
 	autocmd FileType nroff nnoremap <buffer> <leader>r
 				\ :w<bar> :!groff -ms % -T pdf > za.pdf && zathura za.pdf<CR>
 augroup END
+
+autocmd FileType dashboard set showtabline=0 | autocmd WinLeave <buffer> set showtabline=2
 
 highlight Comment gui=italic

@@ -28,7 +28,7 @@ scrolling:
   multiplier: 3
   auto_scroll: true
 
-# Define
+# colorschemes
 schemes:
 
   srcery: &srcery
@@ -159,7 +159,7 @@ bell:
   color: '0xffffff'
   duration: 0
 
-background_opacity: 1
+background_opacity: 0.97
 
 mouse:
   double_click: { threshold: 300 }
@@ -179,23 +179,22 @@ cursor:
   #   - _ Underline
   #   - | Beam
   style: Block
-
   unfocused_hollow: true
 
 live_config_reload: true
 
 font: 
     normal: 
-        family: 'Hack'
+        family: 'Hack Nerd Font'
         style: Regular
     bold: 
-        family: 'Hack' 
+        family: 'Hack Nerd Font' 
         style: Bold
     italic: 
-        family: 'Hack'
+        family: 'Hack Nerd Font'
         style: Italic
     bold_italic: 
-        family: 'Hack'
+        family: 'Hack Nerd Font'
         style: Bold Italic
 
     size: 11

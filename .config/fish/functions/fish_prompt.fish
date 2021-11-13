@@ -10,12 +10,12 @@ end
 
 function fish_prompt
   set -l cyan (set_color cyan)
-  set -l yellow (set_color -o yellow)
+  set -l yellow (set_color FFA500)
   set -l red (set_color -o red)
   set -l blue (set_color -o blue)
-  set -l green (set_color -o green)
+  set -l green (set_color 90ee90)
   set -l white (set_color -o white)
-  set -l purple (set_color -o purple)
+  set -l purple (set_color A020F0)
   set -l normal (set_color normal)
 
 
@@ -33,7 +33,7 @@ function fish_prompt
     set git_info "$git_info$normal)"
   end
 
-  echo -n -s $red '[' $yellow (whoami) $green '@' $blue (cat /etc/hostname) $purple ' ' $cwd ''  $git_info $red ']' $normal '$ '
+  echo -n -s $red '[' $yellow (whoami) $green '@' $purple (cat /etc/hostname) ' ' $purple$cwd ''  $git_info $red ']' $normal '$ '
 end
 
 

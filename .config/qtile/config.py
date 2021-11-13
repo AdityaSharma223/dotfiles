@@ -225,7 +225,8 @@ layouts = [
 def init_colors():
     return [["#282c34", "#282c34"], # color 0
             ["#282c34", "#282c34"], # color 1
-            ["#abb2bf", "#abb2bf"], # color 2
+            # ["#abb2bf", "#abb2bf"], # color 2
+            ["#ffffff", "#ffffff"], # color 2
             ["#fe8019", "#fe8019"], # color 3
             ["#3384d0", "#3384d0"], # color 4
             ["#f3f4f5", "#f3f4f5"], # color 5

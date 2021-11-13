@@ -29,5 +29,3 @@ nnoremap Y y$
 nnoremap yw yiw
 nnoremap cw ciw
 nnoremap dw diw
-
-
