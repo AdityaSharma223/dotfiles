@@ -76,7 +76,7 @@ super + b
 
 # sublime text
 super + s
-    subl
+    flameshot
 #Atom
 # super + e
 #     atom
@@ -103,11 +103,11 @@ super + F12
 
 #Urxvt
 super + t
-    alacritty
+    cool-retro-term
 
 #Pavucontrol
 super + v
-    pavucontrol
+    neovide
 
 #Pragha
 # super + m

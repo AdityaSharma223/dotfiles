@@ -151,7 +151,7 @@ schemes:
       white:   '#928374'
 
 # Apply
-colors: *onedark
+colors: *gruvbox_medium
 
 
 bell:
@@ -159,7 +159,7 @@ bell:
   color: '0xffffff'
   duration: 0
 
-background_opacity: 0.97
+background_opacity: 0.95
 
 mouse:
   double_click: { threshold: 300 }
@@ -178,7 +178,7 @@ cursor:
   #   - ▇ Block
   #   - _ Underline
   #   - | Beam
-  style: Block
+  style: Beam
   unfocused_hollow: true
 
 live_config_reload: true
@@ -196,7 +196,6 @@ font:
     bold_italic: 
         family: 'Hack Nerd Font'
         style: Bold Italic
-
     size: 11
 
 

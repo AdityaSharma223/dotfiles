@@ -5,7 +5,7 @@ if status is-interactive
     set -gx EDITOR nvim
     abbr --add cpy "touch a.py && cat ~/main/Templates/a.py >> a.py && nvim a.py"
     abbr --add cpc "touch a.cpp && cat ~/main/Templates/a.cpp >> a.cpp && nvim a.cpp"
-    abbr --add v nvim 
+    abbr --add v nvim
     abbr --add alaconfig nvim ~/.config/alacritty/alacritty.yml
     abbr --add fishconfig nvim ~/.config/fish/config.fish
     abbr --add fishprompt nvim ~/.config/fish/functions/fish_prompt.fish

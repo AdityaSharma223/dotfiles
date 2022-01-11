@@ -15,9 +15,10 @@ set nocompatible mouse=a shell=fish foldenable autoread number relativenumber no
 set backspace=eol,start,indent ignorecase smartcase hlsearch incsearch showmatch magic lazyredraw linespace=0
 set secure noerrorbells novisualbell t_Co=256 shiftwidth=4 tabstop=4 softtabstop=4
 set autoindent smartindent autochdir spelllang=en_us nospell wrap laststatus=2 showcmd ruler cmdheight=1
-set wildignore+=*/tmp/*,*/.cache/*,*/.git/*,*.so,*~,*.pyc,*.bak,*.class,*.swp,*.zip,*.pdf wildmenu
+set wildignore+=*/tmp/*,*/.cache/*,*/.git/*,*.so,*~,*.pyc,*.bak,*.class,*.swp,*.zip,*.pdf wildmenu 
 set comments=sl:/*,mb:\ *,elx:\ */
-set cursorline
+" set cursorline
+set guifont=Hack\ Nerd\ Font:h11:style=Medium,Regular
 syntax enable
 set termguicolors
 
@@ -36,7 +37,7 @@ Plug 'tpope/vim-markdown'
 Plug 'ap/vim-css-color' " displays colors in css file
 Plug 'jiangmiao/auto-pairs' 
 Plug 'tpope/vim-commentary'
-" startify replacement
+" startify replacement home screen
 Plug 'glepnir/dashboard-nvim'
 " fuzzy find
 Plug 'junegunn/fzf'
@@ -47,6 +48,7 @@ Plug 'preservim/nerdtree'
 Plug 'morhetz/gruvbox'
 Plug 'srcery-colors/srcery-vim'
 Plug 'joshdick/onedark.vim'
+Plug 'hzchirs/vim-material'
 Plug 'shinchu/lightline-gruvbox.vim'
 " Vim Devicons
 Plug 'ryanoasis/vim-devicons'
@@ -60,44 +62,26 @@ call plug#end()
 
 
 " MODIFICTIONS
-" let g:dashboard_custom_header = [
-" \ '                                                       ',
-" \ '                                                       ',
-" \ ' ███╗   ██╗ ███████╗ ██████╗  ██╗   ██╗ ██╗ ███╗   ███╗',
-" \ ' ████╗  ██║ ██╔════╝██╔═══██╗ ██║   ██║ ██║ ████╗ ████║',
-" \ ' ██╔██╗ ██║ █████╗  ██║   ██║ ██║   ██║ ██║ ██╔████╔██║',
-" \ ' ██║╚██╗██║ ██╔══╝  ██║   ██║ ╚██╗ ██╔╝ ██║ ██║╚██╔╝██║',
-" \ ' ██║ ╚████║ ███████╗╚██████╔╝  ╚████╔╝  ██║ ██║ ╚═╝ ██║',
-" \ ' ╚═╝  ╚═══╝ ╚══════╝ ╚═════╝    ╚═══╝   ╚═╝ ╚═╝     ╚═╝',
-" \ '                                                       ',
-" \ '                                                       ',
-" \ '                                                       ',
-" \ '                                                       ',
-" \]
+let g:dashboard_custom_header = [
+\ '                                                       ',
+\ '                                                       ',
+\ ' ███╗   ██╗ ███████╗ ██████╗  ██╗   ██╗ ██╗ ███╗   ███╗',
+\ ' ████╗  ██║ ██╔════╝██╔═══██╗ ██║   ██║ ██║ ████╗ ████║',
+\ ' ██╔██╗ ██║ █████╗  ██║   ██║ ██║   ██║ ██║ ██╔████╔██║',
+\ ' ██║╚██╗██║ ██╔══╝  ██║   ██║ ╚██╗ ██╔╝ ██║ ██║╚██╔╝██║',
+\ ' ██║ ╚████║ ███████╗╚██████╔╝  ╚████╔╝  ██║ ██║ ╚═╝ ██║',
+\ ' ╚═╝  ╚═══╝ ╚══════╝ ╚═════╝    ╚═══╝   ╚═╝ ╚═╝     ╚═╝',
+\ '                                                       ',
+\ '                                                       ',
+\ '                                                       ',
+\ '                                                       ',
+\]
 
-let g:dashboard_custom_header =[
-    \'    ⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⠤⠖⠚⢉⣩⣭⡭⠛⠓⠲⠦⣄⡀⠀⠀⠀⠀⠀⠀⠀  ',
-    \'    ⠀⠀⠀⠀⠀⠀⢀⡴⠋⠁⠀⠀⠊⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠳⢦⡀⠀⠀⠀⠀  ',
-    \'    ⠀⠀⠀⠀⢀⡴⠃⢀⡴⢳⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⣆⠀⠀⠀  ',
-    \'    ⠀⠀⠀⠀⡾⠁⣠⠋⠀⠈⢧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢧⠀⠀  ',
-    \'    ⠀⠀⠀⣸⠁⢰⠃⠀⠀⠀⠈⢣⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⣇⠀  ',
-    \'    ⠀⠀⠀⡇⠀⡾⡀⠀⠀⠀⠀⣀⣹⣆⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢹⠀  ',
-    \'    ⠀⠀⢸⠃⢀⣇⡈⠀⠀⠀⠀⠀⠀⢀⡑⢄⡀⢀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⡇  ',
-    \'    ⠀⠀⢸⠀⢻⡟⡻⢶⡆⠀⠀⠀⠀⡼⠟⡳⢿⣦⡑⢄⠀⠀⠀⠀⠀⠀⠀⠀⢸⡇  ',
-    \'    ⠀⠀⣸⠀⢸⠃⡇⢀⠇⠀⠀⠀⠀⠀⡼⠀⠀⠈⣿⡗⠂⠀⠀⠀⠀⠀⠀⠀⢸⠁  ',
-    \'    ⠀⠀⡏⠀⣼⠀⢳⠊⠀⠀⠀⠀⠀⠀⠱⣀⣀⠔⣸⠁⠀⠀⠀⠀⠀⠀⠀⢠⡟⠀  ',
-    \'    ⠀⠀⡇⢀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠠⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⢸⠃⠀  ',
-    \'    ⠀⢸⠃⠘⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠁⠀⠀⢀⠀⠀⠀⠀⠀⣾⠀⠀  ',
-    \'    ⠀⣸⠀⠀⠹⡄⠀⠀⠈⠁⠀⠀⠀⠀⠀⠀⠀⡞⠀⠀⠀⠸⠀⠀⠀⠀⠀⡇⠀⠀  ',
-    \'    ⠀⡏⠀⠀⠀⠙⣆⠀⠀⠀⠀⠀⠀⠀⢀⣠⢶⡇⠀⠀⢰⡀⠀⠀⠀⠀⠀⡇⠀⠀  ',
-    \'    ⢰⠇⡄⠀⠀⠀⡿⢣⣀⣀⣀⡤⠴⡞⠉⠀⢸⠀⠀⠀⣿⡇⠀⠀⠀⠀⠀⣧⠀⠀  ',
-    \'    ⣸⠀⡇⠀⠀⠀⠀⠀⠀⠉⠀⠀⠀⢹⠀⠀⢸⠀⠀⢀⣿⠇⠀⠀⠀⠁⠀⢸⠀⠀  ',
-    \'    ⣿⠀⡇⠀⠀⠀⠀⠀⢀⡤⠤⠶⠶⠾⠤⠄⢸⠀⡀⠸⣿⣀⠀⠀⠀⠀⠀⠈⣇⠀  ',
-    \]
-
+let g:neovide_transparency=0.8
+let g:neovide_cursor_vfx_mode = "railgun"
 let g:lightline = {}
 let g:dashboard_default_executive ='fzf'
-colorscheme onedark
+colorscheme gruvbox
 set background=dark
 let g:webdevicons_enable_startify = 1
 let g:lightline = {
@@ -105,7 +89,7 @@ let g:lightline = {
 	\   'filetype': 'MyFiletype',
 	\   'fileformat': 'MyFileformat',
 	\ },
-	\ 'colorscheme': 'one'
+	\ 'colorscheme': 'gruvbox'
 	\ }
 
 " to enable devicons in lightline
@@ -144,7 +128,8 @@ nnoremap <leader>l :NERDTree<CR>
 
 " to copy to both the clipboard and the primary selection 
 vnoremap <C-c> "*y :let @+=@*<CR>
-
+" to paste from the system clipboard
+nnoremap <C-v> "+p
 " to find a place holder <++>, delete it and go in insert mode
 nnoremap <Space><Space> <Esc>/<++><Enter>c4l
 
@@ -180,6 +165,10 @@ augroup exe_code
 	"execute js code 
 	autocmd FileType javascript nnoremap <buffer> <leader>r
 				\ :w<bar> :sp<bar> :resize -5<bar> :term node %<CR> :startinsert<CR>
+
+	"opening a js shell for use
+	autocmd FileType javascript nnoremap <buffer> <leader>sh
+				\ :w<bar> :sp<bar> :resize -5<bar> :term node <CR> :startinsert<CR>
 
 	"opening a python shell for use
 	autocmd FileType python nnoremap <buffer> <leader>sh

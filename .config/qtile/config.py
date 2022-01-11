@@ -203,16 +203,16 @@ for i in groups:
 def init_layout_theme():
     return {"margin":5,
             "border_width":2,
-            "border_focus": "#61afef",
-            "border_normal": "#282c34"
+            "border_focus": "#928374",
+            "border_normal": "#282828"
             }
 
 layout_theme = init_layout_theme()
 
 
 layouts = [
-    layout.MonadWide(margin=8, border_width=2, border_focus="#61afef", border_normal="#282828"),
-    layout.MonadTall(margin=8, border_width=2, border_focus="#61afef", border_normal="#282828"),
+    layout.MonadWide(margin=8, border_width=2, border_focus="#928374", border_normal="#282828"),
+    layout.MonadTall(margin=8, border_width=2, border_focus="#928374", border_normal="#282828"),
     layout.Matrix(**layout_theme),
     layout.Bsp(**layout_theme),
     layout.Floating(**layout_theme),
@@ -223,16 +223,16 @@ layouts = [
 # COLORS FOR THE BAR
 #Theme name : ArcoLinux Default
 def init_colors():
-    return [["#282c34", "#282c34"], # color 0
-            ["#282c34", "#282c34"], # color 1
+    return [["#282828", "#282828"], # color 0
+            ["#282828", "#282828"], # color 1
             # ["#abb2bf", "#abb2bf"], # color 2
-            ["#ffffff", "#ffffff"], # color 2
-            ["#fe8019", "#fe8019"], # color 3
+            ["#fce8c3", "#fce8c3"], # color 2
+            ["#fabd2f", "#fabd2f"], # color 3
             ["#3384d0", "#3384d0"], # color 4
             ["#f3f4f5", "#f3f4f5"], # color 5
             ["#cd1f3f", "#cd1f3f"], # color 6
             ["#62FF00", "#62FF00"], # color 7
-            ["#98c379", "#98c379"], # color 8
+            ["#8ec07c", "#8ec07c"], # color 8
             ["#a9a9a9", "#a9a9a9"]] # color 9
 
 
@@ -475,7 +475,7 @@ def init_screens():
     #         Screen(top=bar.Bar(widgets=init_widgets_screen2(), size=26, opacity=0.85))]
     # return [Screen(top=bar.Bar(widgets=init_widgets_screen1(), size=26, opacity=1, margin=[8,8,0,8])),
     #         Screen(top=bar.Bar(widgets=init_widgets_screen2(), size=26, opacity=1, margin=[8,8,0,8]))]
-    return [Screen(top=bar.Bar(widgets=init_widgets_screen1(), size=25, opacity=1, margin=[8,8,0,8]))]
+    return [Screen(top=bar.Bar(widgets=init_widgets_screen1(), size=25, opacity=0.95, margin=[8,8,0,8]))]
 screens = init_screens()
 
 
@@ -502,32 +502,32 @@ dgroups_app_rules = []
 #     #####################################################################################
 #     ### Use xprop fo find  the value of WM_CLASS(STRING) -> First field is sufficient ###
 #     #####################################################################################
-#     d[group_names[0]] = ["Navigator", "Firefox", "Vivaldi-stable", "Vivaldi-snapshot", "Chromium", "Google-chrome", "Brave", "Brave-browser",
-#               "navigator", "firefox", "vivaldi-stable", "vivaldi-snapshot", "chromium", "google-chrome", "brave", "brave-browser", ]
-#     d[group_names[1]] = [ "Atom", "Subl", "Geany", "Brackets", "Code-oss", "Code", "TelegramDesktop", "Discord",
-#                "atom", "subl", "geany", "brackets", "code-oss", "code", "telegramDesktop", "discord", ]
-#     d[group_names[2]] = ["Inkscape", "Nomacs", "Ristretto", "Nitrogen", "Feh",
-#               "inkscape", "nomacs", "ristretto", "nitrogen", "feh", ]
-#     d[group_names[3]] = ["Gimp", "gimp" ]
-#     d[group_names[4]] = ["Meld", "meld", "org.gnome.meld" "org.gnome.Meld" ]
-#     d[group_names[5]] = ["Vlc","vlc", "Mpv", "mpv" ]
-#     d[group_names[6]] = ["VirtualBox Manager", "VirtualBox Machine", "Vmplayer",
-#               "virtualbox manager", "virtualbox machine", "vmplayer", ]
-#     d[group_names[7]] = ["Thunar", "Nemo", "Caja", "Nautilus", "org.gnome.Nautilus", "Pcmanfm", "Pcmanfm-qt",
-#               "thunar", "nemo", "caja", "nautilus", "org.gnome.nautilus", "pcmanfm", "pcmanfm-qt", ]
-#     d[group_names[8]] = ["Evolution", "Geary", "Mail", "Thunderbird",
-#               "evolution", "geary", "mail", "thunderbird" ]
-#     d[group_names[9]] = ["Spotify", "Pragha", "Clementine", "Deadbeef", "Audacious",
-#               "spotify", "pragha", "clementine", "deadbeef", "audacious" ]
+    # d[group_names[0]] = ["Navigator", "Firefox", "Vivaldi-stable", "Vivaldi-snapshot", "Chromium", "Google-chrome", "Brave", "Brave-browser",
+    #           "navigator", "firefox", "vivaldi-stable", "vivaldi-snapshot", "chromium", "google-chrome", "brave", "brave-browser", ]
+    # d[group_names[1]] = [ "Atom", "Subl", "Geany", "Brackets", "Code-oss", "Code", "TelegramDesktop", "Discord",
+    #            "atom", "subl", "geany", "brackets", "code-oss", "code", "telegramDesktop", "discord", ]
+    # d[group_names[2]] = ["Inkscape", "Nomacs", "Ristretto", "Nitrogen", "Feh",
+    #           "inkscape", "nomacs", "ristretto", "nitrogen", "feh", ]
+    # d[group_names[2]] = ["Neovide", "neovide" ]
+    # d[group_names[4]] = ["Meld", "meld", "org.gnome.meld" "org.gnome.Meld" ]
+    # d[group_names[5]] = ["Vlc","vlc", "Mpv", "mpv" ]
+    # d[group_names[6]] = ["VirtualBox Manager", "VirtualBox Machine", "Vmplayer",
+    #           "virtualbox manager", "virtualbox machine", "vmplayer", ]
+    # d[group_names[7]] = ["Thunar", "Nemo", "Caja", "Nautilus", "org.gnome.Nautilus", "Pcmanfm", "Pcmanfm-qt",
+    #           "thunar", "nemo", "caja", "nautilus", "org.gnome.nautilus", "pcmanfm", "pcmanfm-qt", ]
+    # d[group_names[8]] = ["Evolution", "Geary", "Mail", "Thunderbird",
+    #           "evolution", "geary", "mail", "thunderbird" ]
+    # d[group_names[9]] = ["Spotify", "Pragha", "Clementine", "Deadbeef", "Audacious",
+    #           "spotify", "pragha", "clementine", "deadbeef", "audacious" ]
 #     ######################################################################################
 #
-# wm_class = client.window.get_wm_class()[0]
-#
-#     for i in range(len(d)):
-#         if wm_class in list(d.values())[i]:
-#             group = list(d.keys())[i]
-#             client.togroup(group)
-#             client.group.cmd_toscreen(toggle=False)
+    # wm_class = client.window.get_wm_class()[0]
+
+    # for i in range(len(d)):
+    #     if wm_class in list(d.values())[i]:
+    #         group = list(d.keys())[i]
+    #         client.togroup(group)
+    #         client.group.cmd_toscreen(toggle=False)
 
 # END
 # ASSIGN APPLICATIONS TO A SPECIFIC GROUPNAME
