@@ -17,7 +17,7 @@ set secure noerrorbells novisualbell t_Co=256 shiftwidth=4 tabstop=4 softtabstop
 set autoindent smartindent autochdir spelllang=en_us nospell wrap laststatus=2 showcmd ruler cmdheight=1
 set wildignore+=*/tmp/*,*/.cache/*,*/.git/*,*.so,*~,*.pyc,*.bak,*.class,*.swp,*.zip,*.pdf wildmenu 
 set comments=sl:/*,mb:\ *,elx:\ */
-" set cursorline
+set cursorline
 set guifont=Hack\ Nerd\ Font:h11:style=Medium,Regular
 syntax enable
 set termguicolors
@@ -50,6 +50,8 @@ Plug 'srcery-colors/srcery-vim'
 Plug 'joshdick/onedark.vim'
 Plug 'hzchirs/vim-material'
 Plug 'shinchu/lightline-gruvbox.vim'
+" show battery information
+Plug 'lambdalisue/battery.vim'
 " Vim Devicons
 Plug 'ryanoasis/vim-devicons'
 " Ranger integration 
@@ -81,16 +83,18 @@ let g:neovide_transparency=0.8
 let g:neovide_cursor_vfx_mode = "railgun"
 let g:lightline = {}
 let g:dashboard_default_executive ='fzf'
-colorscheme gruvbox
+colorscheme onedark
 set background=dark
 let g:webdevicons_enable_startify = 1
 let g:lightline = {
 	\ 'component_function': {
 	\   'filetype': 'MyFiletype',
 	\   'fileformat': 'MyFileformat',
+	\	'battery': 'battery#component',
 	\ },
-	\ 'colorscheme': 'gruvbox'
+	\ 'colorscheme': 'onedark'
 	\ }
+let g:battery#update_statusline = 1
 
 " to enable devicons in lightline
 function! MyFiletype()

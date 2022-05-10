@@ -151,7 +151,7 @@ schemes:
       white:   '#928374'
 
 # Apply
-colors: *gruvbox_medium
+colors: *onedark
 
 
 bell:
@@ -159,7 +159,7 @@ bell:
   color: '0xffffff'
   duration: 0
 
-background_opacity: 0.95
+background_opacity: 0.85
 
 mouse:
   double_click: { threshold: 300 }
@@ -178,7 +178,7 @@ cursor:
   #   - ▇ Block
   #   - _ Underline
   #   - | Beam
-  style: Beam
+  style: Underline
   unfocused_hollow: true
 
 live_config_reload: true
@@ -204,4 +204,3 @@ key_bindings:
     - { key: N,        mods: Control|Shift,    action: SpawnNewInstance    }
     - { key: F,        mods: Control|Shift,    action: ToggleFullscreen    }
  
-  

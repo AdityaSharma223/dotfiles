@@ -14,4 +14,3 @@ if status is-interactive
     abbr --add qtilebindings nvim ~/.config/qtile/sxhkd/sxhkdrc
     abbr --add gt xclip -sel c ~/main/github/githubtoken
 end
-
