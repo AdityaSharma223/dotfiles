@@ -83,7 +83,7 @@ let g:neovide_transparency=0.8
 let g:neovide_cursor_vfx_mode = "railgun"
 let g:lightline = {}
 let g:dashboard_default_executive ='fzf'
-colorscheme onedark
+colorscheme gruvbox
 set background=dark
 let g:webdevicons_enable_startify = 1
 let g:lightline = {
@@ -92,7 +92,7 @@ let g:lightline = {
 	\   'fileformat': 'MyFileformat',
 	\	'battery': 'battery#component',
 	\ },
-	\ 'colorscheme': 'onedark'
+	\ 'colorscheme': 'gruvbox'
 	\ }
 let g:battery#update_statusline = 1
 

@@ -151,7 +151,7 @@ schemes:
       white:   '#928374'
 
 # Apply
-colors: *onedark
+colors: *gruvbox_medium
 
 
 bell:
@@ -159,7 +159,7 @@ bell:
   color: '0xffffff'
   duration: 0
 
-background_opacity: 0.85
+background_opacity: 1
 
 mouse:
   double_click: { threshold: 300 }
