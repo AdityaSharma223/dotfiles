@@ -201,6 +201,11 @@ augroup exe_code
 	" trying to run and compile a groff
 	autocmd FileType nroff nnoremap <buffer> <leader>r
 				\ :w<bar> :!groff -ms % -T pdf > za.pdf && zathura za.pdf<CR>
+
+	"compile and run c code 
+	autocmd FileType c nnoremap <buffer> <leader>r
+			\ :w<bar> :sp<bar> :resize -5<bar> :term  gcc % -o a && ./a<CR> :startinsert<CR>
+
 augroup END
 
 autocmd FileType dashboard set showtabline=0 | autocmd WinLeave <buffer> set showtabline=2
