@@ -22,7 +22,6 @@ set guifont=Hack\ Nerd\ Font:h11:style=Medium,Regular
 syntax enable
 set termguicolors
 
-
 filetype on                 
 filetype plugin on
 filetype indent on
@@ -50,6 +49,7 @@ Plug 'srcery-colors/srcery-vim'
 Plug 'joshdick/onedark.vim'
 Plug 'hzchirs/vim-material'
 Plug 'shinchu/lightline-gruvbox.vim'
+Plug 'sainnhe/everforest'
 " show battery information
 Plug 'lambdalisue/battery.vim'
 " Vim Devicons
@@ -94,7 +94,7 @@ let g:lightline = {
 	\ },
 	\ 'colorscheme': 'gruvbox'
 	\ }
-let g:battery#update_statusline = 1
+let g:battery#update_statusline = 0
 
 " to enable devicons in lightline
 function! MyFiletype()
@@ -106,8 +106,8 @@ endfunction
 
 
 " Transparent background
-hi! Normal ctermbg=NONE guibg=NONE 
-hi! NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE 
+" hi! Normal ctermbg=NONE guibg=NONE 
+" hi! NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE 
 
 
 " KEYBINDINGS 
