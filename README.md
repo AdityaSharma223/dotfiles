@@ -9,3 +9,5 @@ These are the dotfiles of some of the applications and utilities I use:
 - fish (Shell)
 - Alacritty (Terminal emulator)
 - Ranger (Terminal based file manager) 
+- Zathura (pdf reader)
+- qtile (window manager)(Arco linux base cofig with changes)
