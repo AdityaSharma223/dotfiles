@@ -7,7 +7,7 @@ SETUVAR _fish_abbr_cpy:touch\x20a\x2epy\x20\x26\x26\x20cat\x20\x7e/main/Template
 SETUVAR _fish_abbr_fishconfig:nvim\x20/home/aditya/\x2econfig/fish/config\x2efish
 SETUVAR _fish_abbr_fishprompt:nvim\x20/home/aditya/\x2econfig/fish/functions/fish_prompt\x2efish
 SETUVAR _fish_abbr_gt:xclip\x20\x2dsel\x20c\x20/home/aditya/main/github/githubtoken
-SETUVAR _fish_abbr_nvimconfig:nvim\x20/home/aditya/\x2econfig/nvim/init\x2evim
+SETUVAR _fish_abbr_nvimconfig:nvim\x20/home/aditya/\x2econfig/nvim/init\x2elua
 SETUVAR _fish_abbr_qtilebindings:nvim\x20/home/aditya/\x2econfig/qtile/sxhkd/sxhkdrc
 SETUVAR _fish_abbr_qtileconfig:nvim\x20/home/aditya/\x2econfig/qtile/config\x2epy
 SETUVAR _fish_abbr_v:nvim
@@ -33,7 +33,7 @@ SETUVAR fish_color_selection:white\x1e\x2d\x2dbold\x1e\x2d\x2dbackground\x3dbrbl
 SETUVAR fish_color_status:red
 SETUVAR fish_color_user:brgreen
 SETUVAR fish_color_valid_path:\x2d\x2dunderline
-SETUVAR fish_key_bindings:fish_default_key_bindings
+SETUVAR fish_key_bindings:fish_vi_key_bindings
 SETUVAR fish_pager_color_completion:\x1d
 SETUVAR fish_pager_color_description:B3A06D\x1eyellow
 SETUVAR fish_pager_color_prefix:normal\x1e\x2d\x2dbold\x1e\x2d\x2dunderline

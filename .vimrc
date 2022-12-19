@@ -2,7 +2,7 @@ set nu rnu encoding=UTF-8 nobackup shell=fish nowb noswapfile nowritebackup spli
 set backspace=eol,start,indent ignorecase smartcase t_Co=256 autoindent autochdir smartindent showmatch
 set wildignore+=*/tmp/*,*/.cache/*,*/.git/*,*.so,*~,*.pyc,*.bak,*.class,*.swp,*.zip,*.pdf wildmenu
 set comments=sl:/*,mb:\ *,elx:\ */ hlsearch incsearch ruler cmdheight=1 wrap nospell secure spelllang=en_us
-set shiftwidth=4 tabstop=4 softtabstop=4
+set shiftwidth=4 tabstop=4 softtabstop=4 
 
 syntax enable
 filetype on                 
