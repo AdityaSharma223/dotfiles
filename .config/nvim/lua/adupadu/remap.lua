@@ -22,6 +22,8 @@ vim.keymap.set("n", "N", "Nzzzv")
 vim.keymap.set("n", "<leader>y", "\"+y")
 vim.keymap.set("v", "<leader>y", "\"+y")
 
+vim.keymap.set("n", "<Space><Space>", "<Esc>/<++><Enter>c4l")
+
 -- according to file type
 local cmd = vim.cmd
 cmd [[ 
