@@ -7,8 +7,8 @@
 
 
 window: 
-    opacity: .98
-    # opacity: 0.8
+    # opacity: 0.9
+    opacity: 1
     dimensions: 
         columns: 116
         lines: 30
@@ -16,8 +16,8 @@ window:
         x: 3
         y: 3
     position: 
-        x: 100
-        y: 90
+        x: 150
+        y: 150
     dynamic_title: true
     ligatures: true
     dynamic_padding: true
@@ -109,10 +109,8 @@ schemes:
 
   gruvbox_medium: &gruvbox_medium
     primary:
-  ## hard contrast background - '#1d2021'
-      background:        &gruvbox_dark_bg '#282828'
-  ## soft contrast background - '#32302f'
-      foreground:        '#ebdbb2'
+      background: '#282828'
+      foreground: '#ebdbb2'
       bright_foreground: '#fbf1c7'
       dim_foreground:    '#a89984'
     cursor:
@@ -134,7 +132,7 @@ schemes:
       cyan:    '#8ec07c'
       white:   '#ebdbb2'
     normal:
-      black:   *gruvbox_dark_bg
+      black:   '#282828'
       red:     '#cc241d'
       green:   '#98971a'
       yellow:  '#d79921'
@@ -154,6 +152,7 @@ schemes:
 
 # Apply
   colors: *gruvbox_medium
+      
 
 
 bell:
@@ -185,16 +184,16 @@ live_config_reload: true
 
 font: 
     normal: 
-        family: 'Hack Nerd Font'
+        family: Hack Nerd Font Mono
         style: Regular
     bold: 
-        family: 'Hack Nerd Font' 
+        family: Hack Nerd Font Mono
         style: Bold
     italic: 
-        family: 'Hack Nerd Font'
+        family: Hack Nerd Font Mono
         style: Italic
     bold_italic: 
-        family: 'Hack Nerd Font'
+        family: Hack Nerd Font
         style: Bold Italic
     size: 11
 
@@ -203,4 +202,4 @@ font:
 key_bindings:
     - { key: N,        mods: Control|Shift,    action: SpawnNewInstance    }
     - { key: F,        mods: Control|Shift,    action: ToggleFullscreen    }
- 
+  

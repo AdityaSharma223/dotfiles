@@ -1,0 +1,4 @@
+-- require('monokai').setup { palette = require('monokai').classic }
+-- require('monokai').setup { palette = require('monokai').pro }
+-- require('monokai').setup { palette = require('monokai').soda }
+-- require('monokai').setup { palette = require('monokai').ristretto }
